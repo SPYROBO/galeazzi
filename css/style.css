@@ -5,5 +5,8 @@ div{
     color: #F0F0F0;
 }
 body{
-    background-color: #2b2727;
+    background-color: #161B22;
+}
+.navbar {
+    background-color: #950740 !important;
 }
