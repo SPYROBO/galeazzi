@@ -8,3 +8,6 @@ body{
 .navbar {
     background-color: #950740 !important;
 }
+.contenedor{
+    width: 99%;
+}
