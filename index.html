@@ -14,6 +14,61 @@
         <div class="row">
             <div class="col">
                 ventas
+                <form class="row g-3">
+                    <div class="col-md-6">
+                      <label for="validationDefault01" class="form-label">Cliente</label>
+                      <input type="text" class="form-control" id="validationDefault01" value="" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="validationDefault01" class="form-label">DNI</label>
+                        <input type="text" class="form-control" id="validationDefault01" value="" required>
+                      </div>
+                    <div class="col-md-6">
+                        <label for="validationDefault04" class="form-label">Comprobante</label>
+                        <select class="form-select" id="validationDefault04" required>
+                          <option selected disabled value="">Choose...</option>
+                          <option>...</option>
+                        </select>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="validationDefault04" class="form-label">Tipo de pago</label>
+                        <select class="form-select" id="validationDefault04" required>
+                          <option selected disabled value="">Efectivo</option>
+                          <option selected disabled value="">Tarjeta</option>
+                          <option selected disabled value="">Mercado Pago</option>
+                        </select>
+                      </div>
+                      <table class="table table-striped table-bordered">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>Opción</th>
+                                <th>Artículo</th>
+                                <th>Cantidad</th>
+                                <th>Precio</th>
+                                <th>Descuento</th>
+                                <th>Subtotal</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><button class="btn btn-info btn-sm">X</button></td>
+                                <td>Cocos</td>
+                                <td>2</td>
+                                <td>$10.00</td>
+                                <td>$1.00</td>
+                                <td>$19.00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="row justify-content-center">
+                    <div class="col-4">
+                      <button class="btn btn-primary" type="submit">Confirmar</button>
+                    </div>
+                    <div class="col-4">
+                        <button class="btn btn-primary" type="submit">Cancelar</button>
+                      </div>
+                    </div>
+                  </form>
             </div>
             <div class="col">
                 Agregar articulo
