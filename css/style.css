@@ -8,3 +8,9 @@ body{
 .navbar {
     background-color: #950740 !important;
 }
+.listar {
+    margin-left: 10px;
+}
+.contenedor{
+    width: 99%;
+}
