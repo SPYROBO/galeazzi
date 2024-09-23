@@ -15,5 +15,8 @@ body{
     width: 99%;
 }
 .mostrador{
-    color: #000000;     
+    color: #000000;    
+} 
+h5.card-title{
+    color: #000000;
 }
