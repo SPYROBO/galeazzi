@@ -14,3 +14,6 @@ body{
 .contenedor{
     width: 99%;
 }
+h5.card-title{
+    color: #000000;
+}
