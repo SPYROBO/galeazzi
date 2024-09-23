@@ -1,16 +1,19 @@
 
 div{
-    color: #F0F0F0;
+    color: #ffffff;
 }
 body{
     background-color: #161B22;
 }
 .navbar {
-    background-color: #950740 !important;
+    background-color: #0857BE !important;
 }
 .listar {
     margin-left: 10px;
 }
 .contenedor{
     width: 99%;
+}
+.mostrador{
+    color: #000000;     
 }
