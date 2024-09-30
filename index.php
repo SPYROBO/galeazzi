@@ -16,13 +16,7 @@
     <link rel="stylesheet" href="./css/style.css">
 
 </head>
-<nav class="navbar bg-body-tertiary">
-    <div class="container">
-        <a class="navbar-brand" href="#">
-            <img src="amd.svg" alt="Coco's Supermarket" width="30" height="24">
-        </a>
-    </div>
-</nav>
+<?php include 'vistas/menu.php' ?>
 
 <body>
     <div class="container">
