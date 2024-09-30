@@ -30,26 +30,36 @@
             <!-- carrito -->
             <div class="col">
                 <p>
-                    ventas
+                    Stock
                 </p>
+                <form class="row g-3">
+                    <div class="col-md-6">
+                        <label for="validationDefault01" class="form-label">Buscar</label>
+                        <input type="text" class="text  " id="validationDefault01" value="" required>
+                    </div>
+                </form>
                 <form class="row g-3">
                     <table class="table table-secondary table-bordered">
                         <thead class="thead-dark">
                             <tr>
                                 <th>Agregar</th>
                                 <th>Artículo</th>
+                                <th>Marca</th>
+                                <th>Tipo</th>
                                 <th>Cantidad</th>
                                 <th>Precio</th>
-                                <th>Descuento</th>
+                                <th>Código</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td><button class="btn btn-info btn-sm">+</button></td>
                                 <td>Cocos</td>
+                                <td>Ninguna</td>
+                                <td>Fruta</td>
                                 <td>2</td>
                                 <td>$10.00</td>
-                                <td>$1.00</td>
+                                <td>1</td>
                             </tr>
                         </tbody>
                     </table>
@@ -64,50 +74,22 @@
                 </form>
             </div>
             <!-- buscador -->
-            <div class="col">
-                <p>Buscar articulos</p>
-                <form class="row g-3">
-                    <div class="col-md-6">
-                        <label for="validationDefault01" class="form-label">Buscar</label>
-                        <input type="text" class="text  " id="validationDefault01" value="" required>
-                    </div>
-                </form>
-                <br>
-                <table class="table table-secondary table-bordered">
-                    <thead>
-                        <tr>
-                            <th><label class="listar">Nombre</label></th>
-                            <th><label class="listar">Marca</label></th>
-                            <th><label class="listar">Tipo</label></th>
-                            <th><label class="listar">Codigo</label></th>
-                        </tr>
-                    </thead>
-                    <!-- mostrador de info-->
-                    <tbody>
-                        <tr>
-                            <td>
-                                <div id="nombre" class="col mostrador">
-                                    <p>arroz</p>
-                                </div>
-                            </td>
-                            <td>
-                                <div id="marca" class="col mostrador">
-                                    <p>larga vida</p>
-                                </div>
-                            </td>
-                            <td>
-                                <div id="tipo" class="col mostrador">
-                                    <p>largo</p>
-                                </div>
-                            </td>
-                            <td>
-                                <div id="codigo" class="col mostrador">
-                                    <p>x213812938</p>
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="col" >
+                <div class="col">
+                    <label for="validationDefault04" class="form-label">Provedores</label>
+                    <select class="form-select" id="validationDefault04" required>
+                        <option selected value="">Fruta</option>
+                        <option selected value="">Muebles</option>
+                        <option selected value="">Coca Cola</option>
+                        <div class="col-md-6">
+                            <label for="validationDefault01" class="form-label">Cliente</label>
+                        </div>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
             </div>
         </div>
         <br>
