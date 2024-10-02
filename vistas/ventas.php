@@ -1,24 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php 
+require_once('menu.php');
+require_once('../stock.php');
+ ?>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coco's Supermarket</title>
-
-    <link rel="shortcut icon" href="amd.svg" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./css/style.css">
-
-</head>
-<?php include 'vistas/menu.php' ?>
-
-<body>
     <div class="container">
         <div class="row text-center">
             <!-- carrito -->
@@ -99,45 +83,23 @@
                             <th><label class="listar">Marca</label></th>
                             <th><label class="listar">Tipo</label></th>
                             <th><label class="listar">Codigo</label></th>
-                            <th><label class="listar">Stok</label></th>
+                            <th><label class="listar">Stock</label></th>
                             <th><label class="listar">Precio</label></th>
                         </tr>
                     </thead>
                     <!-- mostrador de info-->
                     <tbody>
+                    <?php foreach( $productos as $producto){ ?>
                         <tr>
-                            <td><input class="col" id="agregar" type="button" value="+"></td>
-                            <td>
-                                <div id="nombre" class="col mostrador">
-                                    <p>arroz</p>
-                                </div>
-                            </td>
-                            <td>
-                                <div id="marca" class="col mostrador">
-                                    <p>larga vida</p>
-                                </div>
-                            </td>
-                            <td>
-                                <div id="tipo" class="col mostrador">
-                                    <p>largo</p>
-                                </div>
-                            </td>
-                            <td>
-                                <div id="codigo" class="col mostrador">
-                                    <p>x213812938</p>
-                                </div>
-                            </td>
-                            <td>
-                                <div id="stok" class="col mostrador">
-                                    <p>5</p>
-                                </div>
-                            </td>
-                            <td>
-                                <div id="precio" class="col mostrador">
-                                    <p>3000</p>
-                                </div>
-                            </td>
-                        </tr>
+                                <td><button class="btn btn-info btn-sm">+</button></td>
+                                 <td><?php echo $producto['nombre'] ?> </td>
+                                 <td><?php echo $producto['marca'] ?> </td>
+                                 <td><?php echo $producto['descripcion'] ?> </td>
+                                 <td><?php echo $producto['id'] ?> </td>
+                                 <td> nada </td>
+                                 <td><?php echo $producto['precio'] ?> </td>
+                                 </tr>
+                        <?php } ?>
                     </tbody>
                 </table>
             </div>
@@ -146,7 +108,7 @@
         <div class="row">
                 <div class="card mb-2 col" style="max-width: 320px;">
                     <div class="col-md-2">
-                        <img src="imagenes/productos.png" class="img-fluid rounded-start" alt="...">
+                        <img src="../imagenes/productos.png" class="img-fluid rounded-start" alt="...">
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
@@ -158,7 +120,7 @@
                 </div>
             <div class="card mb-2 col" style="max-width: 320px;">
                 <div class="col-md-2">
-                    <img src="./imagenes/clientes.png" class="img-fluid rounded-start" alt="...">
+                    <img src="../imagenes/clientes.png" class="img-fluid rounded-start" alt="...">
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
@@ -170,7 +132,7 @@
             </div>
             <div class="card mb-2 col" style="max-width: 320px;">
                 <div class="col-md-2">
-                    <img src="./imagenes/compras.png" class="img-fluid rounded-start" alt="...">
+                    <img src="../imagenes/compras.png" class="img-fluid rounded-start" alt="...">
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
@@ -182,7 +144,7 @@
             </div>
             <div class="card mb-2 col" style="max-width: 320px;">
                 <div class="col-md-2">
-                    <img src="./imagenes/ingresos.png" class="img-fluid rounded-start" alt="...">
+                    <img src="../imagenes/ingresos.png" class="img-fluid rounded-start" alt="...">
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
@@ -193,6 +155,3 @@
             </div>
         </div>
     </div>
-</body>
-
-</html>
