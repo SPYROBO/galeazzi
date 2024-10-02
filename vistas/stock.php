@@ -35,7 +35,7 @@ require_once('../stock.php');
                                  <td><?php echo $producto['nombre'] ?> </td>
                                  <td><?php echo $producto['marca'] ?> </td>
                                  <td><?php echo $producto['descripcion'] ?> </td>
-                                 <td> nada </td>
+                                 <td><?php echo $producto['cant'] ?> </td>
                                  <td><?php echo $producto['precio'] ?> </td>
                                  <td><?php echo $producto['id'] ?> </td>
                                  </tr>
