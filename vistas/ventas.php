@@ -1,8 +1,3 @@
-<?php 
-require_once('menu.php');
-require_once('../stock.php');
- ?>
-
     <div class="container">
         <div class="row text-center">
             <!-- carrito -->
@@ -108,7 +103,7 @@ require_once('../stock.php');
         <div class="row">
                 <div class="card mb-2 col" style="max-width: 320px;">
                     <div class="col-md-2">
-                        <img src="../imagenes/productos.png" class="img-fluid rounded-start" alt="...">
+                        <img src="imagenes/productos.png" class="img-fluid rounded-start" alt="...">
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
@@ -120,7 +115,7 @@ require_once('../stock.php');
                 </div>
             <div class="card mb-2 col" style="max-width: 320px;">
                 <div class="col-md-2">
-                    <img src="../imagenes/clientes.png" class="img-fluid rounded-start" alt="...">
+                    <img src="imagenes/clientes.png" class="img-fluid rounded-start" alt="...">
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
@@ -132,7 +127,7 @@ require_once('../stock.php');
             </div>
             <div class="card mb-2 col" style="max-width: 320px;">
                 <div class="col-md-2">
-                    <img src="../imagenes/compras.png" class="img-fluid rounded-start" alt="...">
+                    <img src="imagenes/compras.png" class="img-fluid rounded-start" alt="...">
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
@@ -144,7 +139,7 @@ require_once('../stock.php');
             </div>
             <div class="card mb-2 col" style="max-width: 320px;">
                 <div class="col-md-2">
-                    <img src="../imagenes/ingresos.png" class="img-fluid rounded-start" alt="...">
+                    <img src="imagenes/ingresos.png" class="img-fluid rounded-start" alt="...">
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">

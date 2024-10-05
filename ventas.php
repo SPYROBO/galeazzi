@@ -1,3 +1,5 @@
-<?php require_once('php/env.php') 
-
+<?php 
+$vista = 'ventas';
+require_once('stock_info.php');
+require_once('vistas/layout.php');
 ?>

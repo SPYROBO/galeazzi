@@ -1,7 +1,3 @@
-<?php 
-require_once('menu.php');
-require_once('../stock.php');
-?>
 <div class="container">
     <div class="row text-center">
         <!-- carrito -->
