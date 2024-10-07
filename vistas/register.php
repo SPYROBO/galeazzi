@@ -15,6 +15,6 @@
         <input type="password" placeholder="Verificar Contraseña" name="Contra2" require> 
         <input type="text" placeholder="Puesto reponedor/vendedor" name="Puesto" require> 
         <input type="submit" value="Registrarse">
-        <a href="#"> Iniciar Sesión </a>
+        <a href="login.php"> Iniciar Sesión </a>
     </form>
 </div>
