@@ -1,58 +1,82 @@
-
-div{
-    color: #ffffff;
-}
-body{
+body {
     background-color: #161B22;
+    color: #ffffff;
+    font-family: 'Arial', sans-serif;
+}
+
+h2, h5 {
+    margin-bottom: 20px;
+}
+
+.table {
+    margin-top: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.table th {
+    background-color: #0857BE;
+}
+
+.table-hover tbody tr:hover {
+    background-color: #e7f1ff;
+}
+
+.stock-form {
+    background-color: #2c2f33;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.stock-form input {
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.btn-success {
+    background-color: #28a745;
+}
+
+.btn-danger {
+    background-color: #dc3545;
 }
 .navbar {
-    background-color: #0857BE !important;
-}
-.listar {
-    margin-left: 10px;
-}
-.contenedor{
-    width: 99%;
-}
-.mostrador{
-    color: #000000;    
-} 
-h5.card-title{
-    color: #000000;
-}
-#validationDefault04{
-    width: 530px !important;
-}  
-.stock-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px; 
-    max-width: 400px; 
-    margin: 0 auto; 
-    padding: 20px; 
-    border: 1px solid #ccc; 
-    border-radius: 5px; 
-    background-color: #f9f9f9; 
+    background-color: #161B22; 
 }
 
-.stock-form input[type="text"],
-.stock-form input[type="number"] {
-    padding: 10px; 
-    border: 1px solid #ccc; 
-    border-radius: 4px; 
-    font-size: 16px; 
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.85);
+    transition: color 0.3s, background-color 0.3s;
 }
 
-.submit-button {
-    padding: 10px; 
-    background-color: #007bff; 
-    color: white;
-    border: none;
-    border-radius: 4px; 
-    cursor: pointer; 
-    font-size: 16px;
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #ffffff;
+    background-color: #0857BE;
+    border-radius: 5px;
 }
 
-.submit-button:hover {
-    background-color: #0056b3;
+.navbar-dark .navbar-brand img {
+    max-height: 28px; 
+}
+
+.navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.navbar-toggler-icon {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+.bgnav{
+    background-color: #0e1183;
 }
