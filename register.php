@@ -36,6 +36,7 @@ else{
     }
 }
 }
-$vista = 'registro';
+
+$vista = 'register';
 require_once('vistas/layout.php')
 ?>
