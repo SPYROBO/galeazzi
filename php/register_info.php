@@ -38,9 +38,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $stmt = $conn->prepare($sql);
                 if ($stmt->execute([$nombre, $dni, $contra1, $direccion, $correo, $cod_emp])) {
                     if ($cod_emp == 1) {
-                        header('Location: ../stock.php');
+                        header('Location: stock_direccion.php');
                     } else {
-                        header('Location: ../ventas.php');
+                        header('Location: ventas_direccion.php');
                     }
                     exit();
                 };

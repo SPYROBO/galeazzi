@@ -16,11 +16,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         if(count($result) != 0 ){
             if(password_verify($contra, $result[0]['contrasena'])){
             if($result[0]['cod_emp'] == 1){
-                header('Location: stock.php');
+                header('Location: stock_direccion.php');
                 exit();
             }
             if($result[0]['cod_emp'] == 2){
-                header('Location: ventas.php');
+                header('Location: ventas_direccion.php');
                 exit();
             }
             }
