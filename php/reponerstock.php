@@ -86,4 +86,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
-require_once('../stock.php');
+require_once('stock_direccion.php');
