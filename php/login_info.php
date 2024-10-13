@@ -1,5 +1,5 @@
 <?php 
-require_once("php/env.php");
+require_once("env.php");
 $error = "";
 $cod_emp = 0;
 
@@ -13,8 +13,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $stmt->bindParam(':dni', $dni);
        if( $stmt->execute()){
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        var_dump($result);
         if(count($result) != 0 ){
-            if(password_verify($contra, $result[0]['contrasena'])){
+            if($result[0]['dni'] == $dni && $result[0]['contrasena'] == $contra){
             if($result[0]['cod_emp'] == 1){
                 header('Location: stock_direccion.php');
                 exit();
@@ -36,6 +37,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         die("Error al iniciar sesion: " . $e->getMessage());
     }
 }
-require_once('login.php');
+require_once('../login.php');
 
 ?>
