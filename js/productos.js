@@ -23,3 +23,16 @@ setTimeout(function() {
         alertMessage.style.display = 'none'; 
     }
 }, 9000);
+
+function showForm(type) {
+    const productForm = document.getElementById('productForm');
+    const providerForm = document.getElementById('providerForm');
+
+    if (type === 'product') {
+        productForm.classList.remove('d-none');
+        providerForm.classList.add('d-none');
+    } else {
+        providerForm.classList.remove('d-none');
+        productForm.classList.add('d-none');
+    }
+}
