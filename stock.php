@@ -5,7 +5,7 @@
             <h2 class="text-light">Gestión de Stock</h2>
         </div>
     </div>
-    
+
     <div class="row">
         <!-- Buscador y tabla -->
         <div class="col">
@@ -78,7 +78,13 @@
                     </div>
                     <button type="submit" class="btn btn-primary w-100">Agregar Producto</button>
                 </form>
-
+                <?php
+                if (isset($_SESSION['msj_error_proveedores'])) {
+                    $error = $_SESSION['msj_error_proveedores'];
+                    echo '<div id="alert-message" class="alert alert-danger" role="alert">' . $error . '</div>';
+                }
+                unset($_SESSION['msj_error_proveedores']);
+                ?>
                 <form id="providerForm" action="agregarproveedor.php" method="POST" class="stock-form d-none">
                     <div class="mb-3">
                         <input type="text" class="form-control" placeholder="Nombre del Proveedor" name="nombre" required>
@@ -88,6 +94,9 @@
                     </div>
                     <div class="mb-3">
                         <input type="text" class="form-control" placeholder="Dirección" name="direccion" required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" placeholder="Email" name="email" required>
                     </div>
                     <button type="submit" class="btn btn-secondary w-100">Agregar Proveedor</button>
                 </form>

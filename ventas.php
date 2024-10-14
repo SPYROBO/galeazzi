@@ -121,7 +121,7 @@
         <div class="col">
             <div class="card mb-4" style="max-width: 320px;">
                 <div class="card-body text-center">
-                    <img src="imagenes/compras.png" class="img-fluid mb-3" alt="Ventas">
+                    <img src="../imagenes/compras.png" class="img-fluid mb-3" alt="Ventas">
                     <h5 class="card-title">Ventas</h5>
                 </div>
             </div>

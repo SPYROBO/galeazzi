@@ -64,7 +64,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $stmt->execute();
             $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
             if (empty($result)) {
-                $sql = "INSERT INTO proveedores (nombre, id_producto) VALUES (?,?)";
+                $sql = "INSERT INTO  proveedores (nombre,id_producto) VALUES (?,?)";
                 $stmt = $conn->prepare($sql);
                 $stmt->execute([$proveedor, $producId]);
 
