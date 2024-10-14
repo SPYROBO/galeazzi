@@ -16,3 +16,10 @@ function eliminarProducto(id) {
     });
 }
 }
+
+setTimeout(function() {
+    var alertMessage = document.getElementById('alert-message');
+    if (alertMessage) {
+        alertMessage.style.display = 'none'; 
+    }
+}, 9000);

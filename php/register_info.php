@@ -34,9 +34,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $stmt->execute();
             $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
             if (empty($result)) {
-                $sql = "INSERT INTO empleados (nombre, dni, contrasena, direccion, correo, cod_emp) VALUES (?,?,?,?,?,? )";
+                $sql = "INSERT INTO empleados (nombre, dni, contrasena, contacto, direccion, correo, cod_emp) VALUES (?, ?, ?,?,?,?,? )";
                 $stmt = $conn->prepare($sql);
-                if ($stmt->execute([$nombre, $dni, $contra1, $direccion, $correo, $cod_emp])) {
+                if ($stmt->execute([$nombre, $dni, $contra1, $numero, $direccion, $correo, $cod_emp])) {
                     if ($cod_emp == 1) {
                         header('Location: stock_direccion.php');
                     } else {

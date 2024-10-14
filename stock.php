@@ -51,7 +51,7 @@
         <div class="col">
             <center><h5 class="text-light">Agregar nuevo producto</h5></center>
             <?php if (!empty($msj)) {
-                echo '<div class="alert alert-danger" role="alert">' . $msj . '</div>';
+                echo '<div id="alert-message" class="alert alert-danger" role="alert">' . $msj . '</div>';
             } ?>
             <form action="reponerstock.php" method="POST" class="stock-form">
                 <div class="mb-3">

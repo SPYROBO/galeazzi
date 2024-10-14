@@ -3,7 +3,7 @@
         <div> Registrate</div>
         <?php
             if (!empty($error)) {
-                echo '<div class="alert alert-danger" role="alert">' . $error . '</div>';
+                echo '<div id="alert-message" class="alert alert-danger" role="alert">' . $error . '</div>';
             }
         ?>
         <input type="text" placeholder="Nombre" name="Nombre" required> 
