@@ -1,6 +1,6 @@
 <?php
 try {
-    $dsn = "sqlsrv:Server=PC-F-06\SQLEXPRESS;Database=supermercado_cocos";
+    $dsn = "sqlsrv:Server=DESKTOP-US8VB93\MSSQLSERVER01;Database=supermercado_cocos";
     $usuario = "";
     $contrasena = "";
 

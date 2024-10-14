@@ -5,13 +5,16 @@
     <link rel="stylesheet" href="css/register.css">
 
 </head>
+<?php session_start(); ?>
 <div>
     <form action="php/register_info.php" method="POST">
         <div><h1> Registrate </h1></div>
         <?php
-        if (!empty($error)) {
-            echo '<div id="alert-message" class="alert alert-danger" role="alert">' . $error . '</div>';
-        }
+        if(isset($_SESSION['msj_error_register'])){
+            $error = $_SESSION['msj_error_register'];
+                echo '<div id="alert-message" class="alert alert-danger" role="alert">' . $error . '</div>';
+            }
+        unset($_SESSION['msj_error_register']);
         ?>
         <input type="text" placeholder="Nombre" name="Nombre" required>
         <input type="number" placeholder="DNI" name="DNI" required>

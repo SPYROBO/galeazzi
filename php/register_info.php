@@ -1,4 +1,5 @@
 <?php
+session_start(); 
 require_once("env.php");
 $error = "";
 $cod_emp = 0;
@@ -51,4 +52,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 }
-require_once('../register.php');
+$_SESSION['msj_error_register'] = $error;
+header('Location: ../register.php');
