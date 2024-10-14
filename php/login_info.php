@@ -1,4 +1,5 @@
 <?php 
+session_start();
 require_once("env.php");
 $error = "";
 $cod_emp = 0;
@@ -37,6 +38,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         die("Error al iniciar sesion: " . $e->getMessage());
     }
 }
-require_once('../login.php');
 
+$_SESSION['msj_error'] = $error;
+header('Location: ../login.php')
 ?>
