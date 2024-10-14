@@ -1,10 +1,6 @@
 <div class="container">
-    <div class="row text-center mb-4">
-        <div class="col">
-            <h2 class="text-light">Ventas</h2>
-        </div>
-    </div>
-
+ <br>
+ <br>
     <div class="row mb-4">
         <!-- Formulario de ventas -->
         <div class="col">

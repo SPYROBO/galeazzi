@@ -1,20 +1,27 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>registro</title>
+    <link rel="stylesheet" href="css/register.css">
+
+</head>
 <div>
     <form action="php/register_info.php" method="POST">
-        <div> Registrate</div>
+        <div><h1> Registrate </h1></div>
         <?php
-            if (!empty($error)) {
-                echo '<div id="alert-message" class="alert alert-danger" role="alert">' . $error . '</div>';
-            }
+        if (!empty($error)) {
+            echo '<div id="alert-message" class="alert alert-danger" role="alert">' . $error . '</div>';
+        }
         ?>
-        <input type="text" placeholder="Nombre" name="Nombre" required> 
-        <input type="number" placeholder="DNI" name="DNI" required> 
+        <input type="text" placeholder="Nombre" name="Nombre" required>
+        <input type="number" placeholder="DNI" name="DNI" required>
         <input type="text" placeholder="Dirección" name="Direccion" required>
-        <input type="number" placeholder="Número de teléfono" name="Numero" required> 
-        <input type="email" placeholder="Correo electrónico" name="Correo" required> 
+        <input type="number" placeholder="Número de teléfono" name="Numero" required>
+        <input type="email" placeholder="Correo electrónico" name="Correo" required>
         <input type="password" placeholder="Contraseña" name="Contra1" pattern=".{7,}" title="La contraseña debe tener al menos 7 caracteres" required>
-        <input type="password" placeholder="Verificar Contraseña" name="Contra2" required> 
-        <input type="text" placeholder="Puesto reponedor/vendedor" name="Puesto" required> 
-        <input type="submit" value="Registrarse">
+        <input type="password" placeholder="Verificar Contraseña" name="Contra2" required>
+        <input type="text" placeholder="Puesto reponedor/vendedor" name="Puesto" required>
+        <input type="submit" value="Registrarse" class="registrarse">
         <a href="login.php"> Iniciar Sesión </a>
     </form>
 </div>
