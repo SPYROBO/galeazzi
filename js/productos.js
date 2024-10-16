@@ -6,12 +6,9 @@ function eliminarProducto(id) {
         type: 'POST',
         dataType: 'json',
         success: function (data) {
-           if(data['error'] == 1){
-            alert(data['mensaje']);
-           }
-           else{
-            alert(data['mensaje']);
-           }
+            if(data['error']== 1){
+                window.location.href = 'stock_direccion.php';
+            }
         }
     });
 }

@@ -5,7 +5,6 @@
             <h2 class="text-light">Gestión de Stock</h2>
         </div>
     </div>
-
     <div class="row">
         <!-- Buscador y tabla -->
         <div class="col">
@@ -15,6 +14,11 @@
                     <button class="btn btn-primary" type="submit">Buscar</button>
                 </div>
             </form>
+            <?php if (isset($_SESSION['eliminartock_msj'])) {
+                $error = $_SESSION['eliminartock_msj'];
+                echo '<div id="alert-message" class="alert alert-danger" role="alert">' . $error . '</div>';
+                unset($_SESSION['eliminartock_msj']);
+            } ?>
             <table class="table table-hover table-bordered">
                 <thead class="thead-dark">
                     <tr>
@@ -50,8 +54,10 @@
         <div class="col">
             <button id="addProductBtn" class="btn btn-primary" onclick="showForm('product')">Agregar Producto</button>
             <button id="addProviderBtn" class="btn btn-secondary" onclick="showForm('provider')">Agregar Proveedor</button>
-            <?php if (!empty($error)) {
+            <?php if (isset($_SESSION['reponerstock_msj'])) {
+                $error = $_SESSION['reponerstock_msj'];
                 echo '<div id="alert-message" class="alert alert-danger" role="alert">' . $error . '</div>';
+                unset($_SESSION['reponerstock_msj']);
             } ?>
             <div id="formContainer" class="mt-4">
                 <form id="productForm" action="reponerstock.php" method="POST" class="stock-form">
@@ -79,11 +85,11 @@
                     <button type="submit" class="btn btn-primary w-100">Agregar Producto</button>
                 </form>
                 <?php
-                if (isset($_SESSION['msj_error_proveedores'])) {
-                    $error = $_SESSION['msj_error_proveedores'];
+                if (isset($_SESSION['msj_proveedores'])) {
+                    $error = $_SESSION['msj_proveedores'];
                     echo '<div id="alert-message" class="alert alert-danger" role="alert">' . $error . '</div>';
                 }
-                unset($_SESSION['msj_error_proveedores']);
+                unset($_SESSION['msj_proveedores']);
                 ?>
                 <form id="providerForm" action="agregarproveedor.php" method="POST" class="stock-form d-none">
                     <div class="mb-3">

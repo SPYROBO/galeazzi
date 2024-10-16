@@ -1,6 +1,6 @@
 <?php
+session_start();
 require_once("env.php");
-
 function buscar($conn, $table, $column, $value)
 {
 
@@ -24,14 +24,13 @@ function buscar($conn, $table, $column, $value)
     }
     return $result[0]['id'];
 }
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $nombre = $_POST["nombre"];
+    $nombre = strtolower($_POST["nombre"]);
     $precio = $_POST["precio"];
     $descuento = $_POST["descuento"];
     $descripcion = $_POST["descripcion"];
     $marca = $_POST["marca"];
-    $proveedor = $_POST["proveedor"];
+    $proveedor = strtolower($_POST["proveedor"]);
     $cantidad = $_POST["cantidad"];
     $msj = '';
     $marcaId = buscar($conn, 'marcas', 'nombre', $marca);
@@ -58,17 +57,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
             $producId = $result[0]['id'];
 
-            $sql = "SELECT * FROM proveedores WHERE nombre = :nombre";
+            $sql = "SELECT * FROM info_proveedores WHERE nombre = :nombre";
             $stmt = $conn->prepare($sql);
             $stmt->bindParam(':nombre', $proveedor);
             $stmt->execute();
             $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
             if (empty($result)) {
-                $sql = "INSERT INTO  proveedores (nombre,id_producto) VALUES (?,?)";
+                $sql = "INSERT INTO proveedores (id_proveedor ,id_producto) VALUES (?,?)";
                 $stmt = $conn->prepare($sql);
-                $stmt->execute([$proveedor, $producId]);
-
-                $sql = "SELECT * FROM proveedores WHERE nombre = :nombre";
+                $stmt->execute([$result[0]['id'], $producId]);
+                
+                $sql = "SELECT * FROM info_proveedores WHERE nombre = :nombre";
                 $stmt = $conn->prepare($sql);
                 $stmt->bindParam(':nombre', $proveedor);
                 $stmt->execute();
@@ -84,6 +83,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         $msj = 'El producto ya se encuentra en la Base de Datos';
     }
+    $_SESSION['reponerstock_msj'] = $msj;
 }
-
-require_once('stock_direccion.php');
+header('Location: stock_direccion.php');

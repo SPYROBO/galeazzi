@@ -5,14 +5,14 @@ $error = "";
 $cod_emp = 0;
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    $nombre = $_POST["Nombre"];
+    $nombre = strtolower($_POST["Nombre"]);
     $dni = $_POST["DNI"];
     $contra1 = $_POST["Contra1"];
     $contra2 =  $_POST["Contra2"];
     $direccion = $_POST["Direccion"];
-    $correo = $_POST["Correo"];
+    $correo = strtolower($_POST["Correo"]);
     $numero =  $_POST["Numero"];
-    $puesto =  $_POST["Puesto"];
+    $puesto =  strtolower($_POST["Puesto"]);
 
     if (!empty($contra1) && !empty($contra2) && $contra1 != $contra2) {
         $error = "Las contraseñas no coinciden";
