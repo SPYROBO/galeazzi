@@ -83,6 +83,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         $msj = 'El producto ya se encuentra en la Base de Datos';
     }
-    $_SESSION['reponerstock_msj'] = $msj;
 }
+$_SESSION['reponerstock_msj'] = $msj;
 header('Location: stock_direccion.php');

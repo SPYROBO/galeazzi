@@ -14,11 +14,6 @@
                     <button class="btn btn-primary" type="submit">Buscar</button>
                 </div>
             </form>
-            <?php if (isset($_SESSION['eliminartock_msj'])) {
-                $error = $_SESSION['eliminartock_msj'];
-                echo '<div id="alert-message" class="alert alert-danger" role="alert">' . $error . '</div>';
-                unset($_SESSION['eliminartock_msj']);
-            } ?>
             <table class="table table-hover table-bordered">
                 <thead class="thead-dark">
                     <tr>

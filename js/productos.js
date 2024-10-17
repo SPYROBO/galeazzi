@@ -8,6 +8,10 @@ function eliminarProducto(id) {
         success: function (data) {
             if(data['error']== 1){
                 window.location.href = 'stock_direccion.php';
+                alert("Realizado")
+            }
+            else{
+                alert("No se pudo realizar")
             }
         }
     });

@@ -1,5 +1,4 @@
 <?php 
-session_start();
 require_once("env.php");
 
 if($_POST['eliminar']){
@@ -18,14 +17,12 @@ if($_POST['eliminar']){
     $stmt = $conn->prepare($sql);
     $stmt->bindParam(':id', $id);
     if($stmt->execute()){
-        $msj = "Eliminado con exito";
         echo json_encode(array('error' => 1));
+        exit();
     }
     else{
         echo json_encode(array('error' => 0));
     }
 
 }
-$_SESSION['eliminarstock_msj']= $msj;
-header('Location: stock_direccion.php');
 ?>
