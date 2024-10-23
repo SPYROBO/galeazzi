@@ -42,15 +42,7 @@
                             <th>Subtotal</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td><button class="btn btn-danger btn-sm">X</button></td>
-                            <td>Cocos</td>
-                            <td>2</td>
-                            <td>$10.00</td>
-                            <td>$1.00</td>
-                            <td>$19.00</td>
-                        </tr>
+                    <tbody id="ticket">
                     </tbody>
                 </table>
                 <div class="row justify-content-center mt-3">
@@ -82,7 +74,7 @@
                 <tbody>
                     <?php foreach ($productos as $producto) { ?>
                         <tr>
-                            <td><button class="btn btn-info btn-sm">+</button></td>
+                            <td><button onclick="crearTicket(<?php echo $producto['id'];?>, '<?php echo $producto['nombre']; ?>' , <?php echo $producto['precio'];?>, <?php echo $producto['descuento'];?>)" class="btn btn-info btn-sm">+</button></td>
                             <td><?php echo $producto['nombre']; ?></td>
                             <td><?php echo $producto['marca']; ?></td>
                             <td><?php echo $producto['descripcion']; ?></td>

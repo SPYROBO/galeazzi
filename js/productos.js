@@ -14,6 +14,24 @@ function eliminarProducto(id) {
 }
 }
 
+function crearTicket(id, nombre, precio, desc){
+    str = ''
+    cont = 1
+    str += "<tr>"
+    str += "<td><button id='a" + id + "' class='btn btn-info btn-sm'>+</button><button id='e" + id + "' class='btn btn-danger btn-sm'>X</button> </td>"
+    str += "<td>"+ nombre +"</td>"
+    str += "<td>"+ cont +"</td>"
+    str += "<td>"+ precio +"</td>"                
+    str += "<td>"+ desc +"</td>"
+    if(desc == 0){
+        str += "<td>"+ precio +"</td>"  
+    }else{
+        str += "<td>"+Math.round(precio/desc+precio, -1)+"</td>"
+    }                
+    str += '</tr>'       
+    document.getElementById('ticket').innerHTML = str
+}
+
 setTimeout(function() {
     var alertMessage = document.getElementById('alert-message');
     if (alertMessage) {
