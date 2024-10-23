@@ -169,3 +169,11 @@ values
     5,
     500
   );
+  insert into
+	stock(id_proveedor,id_producto,cantidad)
+values
+  (1, 1,234),
+  (2, 2,564),
+  (3, 3,425),
+  (4, 4,954),
+  (5, 5,321);
