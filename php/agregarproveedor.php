@@ -6,6 +6,7 @@
         $nombre = strtolower($_POST['nombre']);                                                                         
         $tel = $_POST['telefono'];
         $dir = $_POST['direccion'];
+        $ciudad = $_POST['ciudad'];
         $msj = '';
         try{
             $sql = "SELECT * FROM info_proveedores WHERE email = :email AND telefono = :tel";
@@ -15,9 +16,9 @@
             $stmt->execute();
             $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
             if(empty($result)){
-                $sql = "INSERT INTO info_proveedores(nombre, direccion, telefono, email) VALUES (?, ?, ?, ?)";
+                $sql = "INSERT INTO info_proveedores(nombre, direccion,ciudad, telefono, email) VALUES (?, ?, ?, ?, ?)";
                 $stmt = $conn->prepare($sql);
-                if($stmt->execute([$nombre, $dir, $tel, $email])){
+                if($stmt->execute([$nombre, $dir,$ciudad ,$tel, $email])){
                     $msj = 'Se añadió con éxito.';
                 }
                 else{

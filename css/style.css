@@ -81,3 +81,45 @@ h2, h5 {
 .bgnav{
     background-color: #0857be;
 }
+
+
+.sidebarside {
+    background: linear-gradient(to bottom right, #052649, hwb(198 6% 60%)); 
+    border-right: 2px solid rgb(255, 255, 255);
+    height: 100vh; /* Altura completa */
+    position: fixed;
+}
+
+.sidebarside .nav-link {
+    color: rgba(255, 255, 255, 0.85);
+    transition: color 0.3s, background-color 0.3s;
+}
+
+.sidebarside .nav-link:hover {
+    color: #ffffff;
+    background-color: #06080a; /* Color de fondo al pasar el ratón */
+    border-radius: 5px;
+}
+
+.sidebarside h4 {
+    color: #700b0b; /* Color del título */
+}
+
+.main-content {
+   
+    min-height: 100vh; /* Altura mínima para el contenido */
+}
+#productForm {
+    max-width: 400px; 
+    margin: 0 auto; /* Centrar el formulario */
+}
+#providerForm {
+    max-width: 400px; 
+    margin: 0 auto; /* Centrar el formulario */
+}
+.alert-message{
+    margin-top: 20px;
+    max-width: 400px; 
+    max-height: 100px;
+    margin: 0 auto
+}

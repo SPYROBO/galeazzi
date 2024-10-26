@@ -1,0 +1,21 @@
+.tabla-proveedores {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-family: Arial, sans-serif;
+}
+.tabla-proveedores th, .tabla-proveedores td {
+    border: 1px solid #ffffff; /* Color de borde personalizado */
+    padding: 10px;
+    text-align: left;
+}
+.tabla-proveedores th {
+    background-color: #4d647c; /* Color de fondo de encabezado */
+    color: #dbd4d4; /* Color de texto de encabezado */
+}
+.tabla-proveedores tbody tr:nth-child(odd) {
+    background-color: #7a5555; /* Color de fondo para filas impares */
+}
+.tabla-proveedores tbody tr:hover {
+    background-color: #344d65; /* Color al pasar el mouse */
+}

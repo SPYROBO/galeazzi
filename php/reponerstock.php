@@ -62,7 +62,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $stmt->bindParam(':nombre', $proveedor);
             $stmt->execute();
             $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            if (empty($result)) {
+            $proveedorId = $result[0]['id'];
+            
                 $sql = "INSERT INTO proveedores (id_proveedor ,id_producto) VALUES (?,?)";
                 $stmt = $conn->prepare($sql);
                 $stmt->execute([$result[0]['id'], $producId]);
@@ -72,7 +73,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $stmt->bindParam(':nombre', $proveedor);
                 $stmt->execute();
                 $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            }
+                
             $proveedorId = $result[0]['id'];
             $sql = "INSERT INTO stock (id_proveedor, id_producto, cantidad) VALUES (?,?,?)";
                 $stmt = $conn->prepare($sql);
