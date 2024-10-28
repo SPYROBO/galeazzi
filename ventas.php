@@ -59,32 +59,7 @@
         <!-- Buscador -->
         <div class="col">
             <center><h5 class="text-light">Buscar Artículos</h5></center>
-            <table class="table table-secondary table-bordered mt-3">
-                <thead>
-                    <tr>
-                        <th>Agregar</th>
-                        <th>Nombre</th>
-                        <th>Marca</th>
-                        <th>Tipo</th>
-                        <th>Código</th>
-                        <th>Stock</th>
-                        <th>Precio</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php foreach ($productos as $producto) { ?>
-                        <tr>
-                            <td><button onclick="crearTicket(<?php echo $producto['id'];?>, '<?php echo $producto['nombre']; ?>' , <?php echo $producto['precio'];?>, <?php echo $producto['descuento'];?>)" class="btn btn-info btn-sm">+</button></td>
-                            <td><?php echo $producto['nombre']; ?></td>
-                            <td><?php echo $producto['marca']; ?></td>
-                            <td><?php echo $producto['descripcion']; ?></td>
-                            <td><?php echo $producto['id']; ?></td>
-                            <td><?php echo $producto['cant']; ?></td>
-                            <td><?php echo $producto['precio']; ?></td>
-                        </tr>
-                    <?php } ?>
-                </tbody>
-            </table>
+            <?php require_once('stock_info.php'); ?>
         </div>
     </div>
 

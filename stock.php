@@ -41,34 +41,7 @@
                                 <button class="btn btn-primary" type="submit">Buscar</button>
                             </div>
                         </form>
-                        <table class="table table-hover table-bordered">
-                            <thead class="thead-dark">
-                                <tr>
-                                    <th>Eliminar</th>
-                                    <th>Artículo</th>
-                                    <th>Marca</th>
-                                    <th>Descripción</th>
-                                    <th>Cantidad</th>
-                                    <th>Precio</th>
-                                    <th>Código</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php foreach ($productos as $producto) { ?>
-                                    <tr>
-                                        <td>
-                                            <center><button id="<?php echo $producto['id']; ?>" class="btn btn-danger btn-sm" onclick="eliminarProducto(<?php echo $producto['id']; ?>)">-</button></center>
-                                        </td>
-                                        <td><?php echo $producto['nombre']; ?></td>
-                                        <td><?php echo $producto['marca']; ?></td>
-                                        <td><?php echo $producto['descripcion']; ?></td>
-                                        <td><?php echo $producto['cant']; ?></td>
-                                        <td><?php echo $producto['precio']; ?></td>
-                                        <td><?php echo $producto['id']; ?></td>
-                                    </tr>
-                                <?php } ?>
-                            </tbody>
-                        </table>
+                    <?php require_once('stock_info.php'); ?>
                     </div>
 
                     <div class="col">
@@ -136,36 +109,7 @@
         </div>
         <div id="info_proveedores" class="d-none">
     <main class="col-md-9 ms-sm-auto col-lg-10 px-4">
-        <table class="tabla-proveedores">
-            <thead>
-                <tr>
-                    <th>Eliminar</th>
-                    <th>Nombre</th>
-                    <th>Dirección</th>
-                    <th>Teléfono</th>
-                    <th>Ciudad</th>
-                    <th>Email</th>
-                    <th>Productos</th>
-                    <th>Marcas</th>
-                </tr>
-            </thead>
-            <tbody>
-            <?php foreach ($proveedores as $proveedor) { ?>
-                <tr>
-                <td>
-                <center><button id="<?php echo $proveedor['id']; ?>" class="btn btn-danger btn-sm" onclick="eliminarProveedor(<?php echo $proveedor['id']; ?>, <?php echo $proveedor['id_prod']; ?> )">-</button></center>
-                </td>
-                <td><?php echo $proveedor['nombre']; ?></td>
-                <td><?php echo $proveedor['direccion']; ?></td>
-                <td><?php echo $proveedor['telefono']; ?></td>
-                <td><?php echo $proveedor['ciudad']; ?></td>
-                <td><?php echo $proveedor['email']; ?></td>
-                <td><?php echo $proveedor['produc_nom']; ?></td>
-                <td><?php echo $proveedor['marca']; ?></td>
-                </tr>
-            <?php } ?>
-            </tbody>
-        </table>
+      <?php require_once('info_proveedores.php'); ?>
     </main>
 </div>
 
