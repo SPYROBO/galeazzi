@@ -86,8 +86,6 @@ h2, h5 {
 .sidebarside {
     background: linear-gradient(to bottom right, #052649, hwb(198 6% 60%)); 
     border-right: 2px solid rgb(255, 255, 255);
-    height: 100vh; /* Altura completa */
-    position: fixed;
 }
 
 .sidebarside .nav-link {
@@ -97,25 +95,25 @@ h2, h5 {
 
 .sidebarside .nav-link:hover {
     color: #ffffff;
-    background-color: #06080a; /* Color de fondo al pasar el ratón */
+    background-color: #06080a; 
     border-radius: 5px;
 }
 
 .sidebarside h4 {
-    color: #700b0b; /* Color del título */
+    color: #700b0b; 
 }
 
 .main-content {
    
-    min-height: 100vh; /* Altura mínima para el contenido */
+    min-height: 100vh; 
 }
 #productForm {
     max-width: 400px; 
-    margin: 0 auto; /* Centrar el formulario */
+    margin: 0 auto;
 }
 #providerForm {
     max-width: 400px; 
-    margin: 0 auto; /* Centrar el formulario */
+    margin: 0 auto; 
 }
 .alert-message{
     margin-top: 20px;
