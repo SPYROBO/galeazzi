@@ -2,7 +2,7 @@ function crearTicket(id, nombre, precio, desc){
     str = ''
     cont = 1
     str += "<tr>"
-    str += "<td><button id='a" + id + "' class='btn btn-info btn-sm'>+</button><button id='e" + id + "' class='btn btn-danger btn-sm'>X</button> </td>"
+    str += "<td><button id='a" + id + "' class='btn btn-success btn-sm'>+</button>" + " " + "<button id='e" + id + "' class='btn btn-danger btn-sm'>X</button> </td>"
     str += "<td>"+ nombre +"</td>"
     str += "<td>"+ cont +"</td>"
     str += "<td>"+ precio +"</td>"                
