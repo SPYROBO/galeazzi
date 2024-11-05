@@ -9,7 +9,9 @@
                 <button class="btn btn-primary" type="submit">Buscar</button>
             </div>
         </form>
-        <?php require_once('stock_info.php'); ?>
+        <?php 
+        $tipo_valor = "Eliminar";
+        require_once('stock_info.php'); ?>
     </div>
 
     <div class="col">

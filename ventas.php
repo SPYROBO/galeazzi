@@ -93,7 +93,9 @@
                     <center>
                         <h5 class="text-light">Buscar Artículos</h5>
                     </center>
-                    <?php require_once('stock_info.php'); ?>
+                    <?php 
+                    $tipo_valor = "Añadir";
+                    require_once('stock_info.php'); ?>
                 </div>
             </div>
 
