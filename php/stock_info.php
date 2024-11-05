@@ -28,7 +28,7 @@ $productos = $result->fetchAll(PDO::FETCH_ASSOC);
 }
 
 $pagProductos = isset($_GET['pagProductos']) ? (int)$_GET['pagProductos'] : 1;
-define('CANT_REG_PAG', 5);
+define('CANT_REG_PAG', 2);
 $cantPagProductos = ceil(count($productos) / CANT_REG_PAG);
 $inicioProductos = ($pagProductos - 1) * CANT_REG_PAG;
 
@@ -81,7 +81,7 @@ echo "</tbody>
 
 for ($i = 1; $i <= $cantPagProductos; $i++) {
     echo "<li class='page-item " . ($i == $pagProductos ? 'active' : '') . "'>
-            <a class='page-link' href='?pagProductos={$i}'>$i</a>
+            <a class='page-link' href='?page=home&pagProductos={$i}'>$i</a>
         </li>";
 }
 

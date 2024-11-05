@@ -10,6 +10,7 @@ $res = $conn->query($consul);
 $proveedores = $res->fetchAll(PDO::FETCH_ASSOC);
 
 $pagProveedores = isset($_GET['pagProveedores']) ? (int)$_GET['pagProveedores'] : 1;
+define('CANT_REG_PAG', 2);
 $cantPagProveedores = ceil(count($proveedores) / CANT_REG_PAG);
 $inicioProveedores = ($pagProveedores - 1) * CANT_REG_PAG;
 
@@ -57,7 +58,7 @@ echo '<nav aria-label="Page navigation example">
 
 for ($i = 1; $i <= $cantPagProveedores; $i++) {
     echo "<li class='page-item " . ($i == $pagProveedores ? 'active' : '') . "'>
-            <a class='page-link' href='?pagProveedores={$i}'>$i</a>
+            <a class='page-link' href='?page=gestionarProveedores&pagProveedores={$i}'>$i</a>
         </li>";
 }
 
