@@ -1,179 +1,71 @@
-insert into
-  clientes (dni, apellido, email, telefono)
-values
-  (12345678, 'González', 'gonzalez@ejemplo.com', 123456789 ),
-  (87654321, 'Martínez', 'martinez@ejemplo.com', 987654321 ),
-  (11223344, 'Pérez', 'perez@ejemplo.com', 112233445),
-  (44332211, 'López', 'lopez@ejemplo.com', 443322110),
-  (55667788, 'García', 'garcia@ejemplo.com', 556677889
-  );
-  insert into
-  descuentos (nombre)
-values
-  ('10% de Descuento'),
-  ('2x1 en Productos'),
-  ('20% de Descuento'),
-  ('Envío Gratis'),
-  ('5% de Descuento');
-  insert into
-  empleados ( dni, nombre, direccion, contacto, cod_emp, contrasena, correo )
-values
-  (
-    12345678,
-    'Juan Pérez',
-    'Calle Principal 123',
-    '123-456-7890',
-    101,
-    'contrasena123',
-    'juan.perez@ejemplo.com'
-  ),
-  (
-    87654321,
-    'María López',
-    'Calle Olmo 456',
-    '987-654-3210',
-    102,
-    'contrasena456',
-    'maria.lopez@ejemplo.com'
-  ),
-  (
-    11223344,
-    'Carlos García',
-    'Calle Roble 789',
-    '456-789-0123',
-    103,
-    'contrasena789',
-    'carlos.garcia@ejemplo.com'
-  ),
-  (
-    44332211,
-    'Ana Martínez',
-    'Calle Pino 321',
-    '654-321-0987',
-    104,
-    'contrasena321',
-    'ana.martinez@ejemplo.com'
-  ),
-  (
-    55667788,
-    'Luis Rodríguez',
-    'Calle Arce 654',
-    '321-654-9870',
-    105,
-    'contrasena654',
-    'luis.rodriguez@ejemplo.com'
-  );
-  insert into
-  marcas (nombre)
-values
-  ('Marca A'),
-  ('Marca B'),
-  ('Marca C'),
-  ('Marca D'),
-  ('Marca E');
-  insert into
-  tipo_pago (nombre)
-values
-  ('Tarjeta de Crédito'),
-  ('Tarjeta de Débito'),
-  ('Efectivo'),
-  ('Transferencia Bancaria'),
-  ('PayPal');
-  insert into
-  info_proveedores (nombre, direccion, telefono, ciudad, email)
-values
-  (
-    'Proveedor A',
-    'Calle Falsa 123',
-    123456789,
-    'Ciudad A',
-    'contacto@proveedora.com'
-  ),
-  (
-    'Proveedor B',
-    'Avenida Siempre Viva 742',
-    987654321,
-    'Ciudad B',
-    'contacto@proveedorb.com'
-  ),
-  (
-    'Proveedor C',
-    'Calle Luna 456',
-    112233445,
-    'Ciudad C',
-    'contacto@proveedorc.com'
-  ),
-  (
-    'Proveedor D',
-    'Calle Sol 789',
-    443322110,
-    'Ciudad D',
-    'contacto@proveedord.com'
-  ),
-  (
-    'Proveedor E',
-    'Calle Estrella 321',
-    556677889,
-    'Ciudad E',
-    'contacto@proveedore.com'
-  );
-  insert into
-  proveedores (id_proveedor, id_producto)
-values
-  (1, 1),
-  (2, 2),
-  (3, 3),
-  (4, 4),
-  (5, 5);
-  insert into
-  productos (
-    nombre,
-    descripcion,
-    id_marca,
-    id_descuento,
-    precio
-  )
-values
-  (
-    'Producto 1',
-    'Descripción del producto 1',
-    1,
-    1,
-    100
-  ),
-  (
-    'Producto 2',
-    'Descripción del producto 2',
-    2,
-    2,
-    200
-  ),
-  (
-    'Producto 3',
-    'Descripción del producto 3',
-    3,
-    3,
-    300
-  ),
-  (
-    'Producto 4',
-    'Descripción del producto 4',
-    4,
-    4,
-    400
-  ),
-  (
-    'Producto 5',
-    'Descripción del producto 5',
-    5,
-    5,
-    500
-  );
-  insert into
-	stock(id_proveedor,id_producto,cantidad)
-values
-  (1, 1,234),
-  (2, 2,564),
-  (3, 3,425),
-  (4, 4,954),
-  (5, 5,321);
+INSERT INTO dbo.clientes (dni, apellido, email, telefono) 
+VALUES 
+(203456789, 'Gomez', 'gomez@gmail.com', 1123456789),
+(204567890, 'Martínez', 'martinez@yahoo.com', 1134567890),
+(205678901, 'Pérez', 'perez@hotmail.com', 1145678901),
+(206789012, 'Rodríguez', 'rodriguez@outlook.com', 1156789012);
+
+INSERT INTO dbo.descuentos (nombre) 
+VALUES 
+(10),  
+(20), 
+(30), (40), (50), (60), (70), (80), (90), (100);  
+
+INSERT INTO dbo.detalle_venta (id_venta, id_producto, cant_producto) 
+VALUES 
+(1, 1, 2), 
+(1, 2, 3);  
+
+INSERT INTO dbo.marcas (nombre) 
+VALUES 
+('Coca-Cola'),
+('Pepsi'),
+('Arcor'),
+('Ledesma'),
+('La Serenísima'),
+('Baggio');
+
+INSERT INTO dbo.info_proveedores (nombre, direccion, telefono, ciudad, email) 
+VALUES 
+('Coca-Cola FEMSA Argentina', 'Av. Santa Fe 3456', 1134456677, 'Buenos Aires', 'contacto@cokefemsa.com.ar'), -- Coca-Cola FEMSA
+('PepsiCo Argentina', 'Calle Cerrito 600', 1133321111, 'Buenos Aires', 'atencionclientes@pepsico.com.ar'), -- PepsiCo Argentina
+('Arcor S.A.I.C.', 'Av. Rivadavia 2400', 3514312222, 'Córdoba', 'atencion@arcor.com'), -- Arcor
+('Ledesma S.A.A.I.', 'Calle 25 de Mayo 450', 3804623000, 'San Salvador de Jujuy', 'info@ledesma.com.ar'), -- Ledesma
+('La Serenísima', 'Calle 12 de Octubre 3500', 1135552233, 'Buenos Aires', 'contacto@serenisima.com.ar'), -- La Serenísima
+('Baggio S.A.', 'Av. del Libertador 2100', 1148880000, 'Buenos Aires', 'contacto@baggio.com.ar'); -- Baggio
+
+INSERT INTO dbo.info_proveedores (nombre, direccion, telefono, ciudad, email) 
+VALUES 
+('Coca-Cola FEMSA Argentina', 'Av. Santa Fe 3456', 1136677, 'Buenos Aires', 'contacto@cokefemsa.com.ar'), -- Coca-Cola FEMSA
+('PepsiCo Argentina', 'Calle Cerrito 600', 113331, 'Buenos Aires', 'atencionclientes@pepsico.com.ar'), -- PepsiCo Argentina
+('Arcor S.A.I.C.', 'Av. Rivadavia 2400', 3514312, 'Córdoba', 'atencion@arcor.com'), -- Arcor
+('Ledesma S.A.A.I.', 'Calle 25 de Mayo 450', 3804600, 'San Salvador de Jujuy', 'info@ledesma.com.ar'), -- Ledesma
+('La Serenísima', 'Calle 12 de Octubre 3500', 1135233, 'Buenos Aires', 'contacto@serenisima.com.ar'), -- La Serenísima
+('Baggio S.A.', 'Av. del Libertador 2100', 114800, 'Buenos Aires', 'contacto@baggio.com.ar'); -- Baggio
+
+INSERT INTO dbo.productos (nombre, descripcion, id_marca, id_descuento, precio) 
+VALUES 
+('Coca-Cola 500ml', 'Bebida gaseosa', 1, 1, 90),   -- Coca-Cola Argentina
+('Pepsi 500ml', 'Bebida gaseosa', 2, 2, 85),      -- PepsiCo Argentina
+('Galletitas Chokolinas', 'Galletas de chocolate', 3, 3, 50),   -- Arcor
+('Azúcar Ledesma 1kg', 'Azúcar de caña', 4, 4, 65),   -- Ledesma
+('Leche La Serenísima 1L', 'Leche entera', 5, 5, 60),  -- La Serenísima
+('Jugo Baggio 1L', 'Jugo de naranja', 6, 6, 55);    -- Baggio
+
+INSERT INTO dbo.proveedores (id_proveedor, id_producto) 
+VALUES 
+(4, 1),  
+(5, 2),  
+(6, 3),  
+(7, 4),  
+(8, 5),  
+(9, 6);  
+
+INSERT INTO dbo.stock (id_proveedor, id_producto, cantidad) 
+VALUES 
+(1, 1, 500),  
+(2, 2, 400),  
+(3, 3, 300), 
+(4, 4, 600),  
+(5, 5, 800),  
+(6, 6, 700);  

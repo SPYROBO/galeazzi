@@ -20,7 +20,7 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'home';
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="?page=reportes">
+                        <a class="nav-link text-light" href="?page=stockBajo">
                             <i class="fas fa-chart-line"></i> Productos con stock bajo
                         </a>
                     </li>
@@ -43,6 +43,9 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'home';
                     case 'gestionarProveedores':
                         require_once('info_proveedores.php');
                         break;
+                    case 'stockBajo':
+                        require_once('bajo_stock.php');
+                        break; 
                     default:
                         echo 'Not foun 404';
                         break;

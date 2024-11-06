@@ -40,6 +40,10 @@ function restar(){
 
 }
 
+function cambiarCant(id){
+alert(id)
+}
+
 setTimeout(function() {
     var alertMessage = document.getElementById('alert-message');
     if (alertMessage) {
