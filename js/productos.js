@@ -2,7 +2,7 @@ function crearTicket(id, nombre, precio, desc){
     str = ''
     cont = 1
     str += "<tr>"
-    str += "<td><button id='a" + id + "' class='btn btn-success btn-sm'>+</button>" + " " + "<button id='e" + id + "' class='btn btn-danger btn-sm'>X</button> </td>"
+    str += "<td><button>rkgl</button>" 
     str += "<td>"+ nombre +"</td>"
     str += "<td>"+ cont +"</td>"
     str += "<td>"+ precio +"</td>"                
@@ -14,6 +14,10 @@ function crearTicket(id, nombre, precio, desc){
     }                
     str += '</tr>'       
     document.getElementById('ticket').innerHTML = str
+}
+
+function cambiarCant(id){
+alert(id)
 }
 
 setTimeout(function() {
