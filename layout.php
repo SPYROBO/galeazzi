@@ -13,6 +13,7 @@
         crossorigin="anonymous"></script>
    <script src="../js/productos.js" > </script>
    <script src="../js/eliminar.js" > </script>
+   <script src= "../js/traer_info.js"></script>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/tablas.css">
 </head>

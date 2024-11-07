@@ -24,11 +24,6 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'home';
                             <i class="fas fa-chart-line"></i> Productos con stock bajo
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-light" href="?page=ajustes">
-                            <i class="fas fa-box"></i> Reponer Stock
-                        </a>
-                    </li>
                 </ul>
             </div>
         </nav>
