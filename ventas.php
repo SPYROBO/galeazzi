@@ -36,7 +36,7 @@
             <div class="row">
                 <!-- Formulario de ventas -->
                 <div class="col-md-6">
-                    <form class="mb-4">
+                    <form class="mb-4" id="form_ticket">
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <label for="dni" class="form-label">DNI</label>
@@ -74,8 +74,7 @@
                                     <th>Subtotal</th>
                                 </tr>
                             </thead>
-                            <tbody id="ticket">
-                            </tbody>
+                            <tbody id="ticket"></tbody>
                         </table>
                         <div class="row justify-content-center mt-3">
                             <div class="col-4">
