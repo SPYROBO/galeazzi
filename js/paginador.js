@@ -1,7 +1,7 @@
 $(document).ready(function () {
     $.ajax({
-        url: 'stock_info.php',
-        data: { 'info_stock': 'productos' },
+        url: 'traer_info.php',
+        data: { 'data': 'productos' },
         type: 'POST',
         dataType: 'json',
         success: function (data) {
@@ -13,7 +13,7 @@ $(document).ready(function () {
 
             function mostrarRegistrosPagina() {
                 var registrosHTML = '<table class="table table-bordered"><thead><tr>' +
-                    '<th>Eliminar</th>' +
+                    '<th>Agregar</th>' +
                     '<th>Producto</th>' +
                     '<th>Marca</th>' +
                     '<th>Descuento</th>' +
@@ -24,7 +24,7 @@ $(document).ready(function () {
 
                 for (var i = offset; i < offset + mostrarRegistros && i < elementosTot; i++) {
                     registrosHTML += '<tr>' +
-                        '<td><button onclick="eliminarProducto('+data[i].id+')"> - </button></td>' +
+                        '<td><button onclick="crearTicket('+data[i].id+')"> + </button></td>' +
                         '<td>' + data[i].nombre + '</td>' +
                         '<td>' + data[i].marca + '</td>' +
                         '<td>' + data[i].descuento + '</td>' +

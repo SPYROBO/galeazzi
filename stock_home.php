@@ -3,12 +3,8 @@
 <div class="row">
     <!-- Buscador y tabla -->
     <div class="col">
-        <div id="productos"></div>
-
-        <div class="paginacion" id="paginacion">
-        <a href="#" class="prev">Anterior</a>
-        <a href="#" class="next">Siguiente</a>
-        </div>
+        <?php 
+        require_once('stock_info.php'); ?>
     </div>
 
     <div class="col">
