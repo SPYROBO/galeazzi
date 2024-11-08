@@ -92,9 +92,14 @@
                     <center>
                         <h5 class="text-light">Buscar Artículos</h5>
                     </center>
-                    <?php 
-                    $tipo_valor = "Añadir";
-                    require_once('stock_info.php'); ?>
+                    <div class="col">
+                        <div id="productos"></div>
+
+                        <div class="paginacion" id="paginacion">
+                            <a href="#" class="prev">Anterior</a>
+                            <a href="#" class="next">Siguiente</a>
+                        </div>
+                    </div>
                 </div>
             </div>
 

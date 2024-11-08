@@ -3,9 +3,12 @@
 <div class="row">
     <!-- Buscador y tabla -->
     <div class="col">
-        <?php 
-        $tipo_valor = "Eliminar";
-        require_once('stock_info.php'); ?>
+        <div id="productos"></div>
+
+        <div class="paginacion" id="paginacion">
+        <a href="#" class="prev">Anterior</a>
+        <a href="#" class="next">Siguiente</a>
+        </div>
     </div>
 
     <div class="col">
