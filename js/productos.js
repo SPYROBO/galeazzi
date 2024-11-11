@@ -132,11 +132,10 @@ function compra_efectuada(){
     });
     $.ajax({
         url: 'compra_efectuada.php',
-        data: ticket_completo,
+        data: {'ticket':ticket_completo},
         type: 'POST',
         dataType: 'json',
         success: function (data) {
-            console.log(data)
         }
     });
 }
