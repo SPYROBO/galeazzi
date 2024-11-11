@@ -25,7 +25,7 @@ foreach ($productosPaginados as $producto) {
     if($m == "Añadir"){
         echo "<tr>
         <td>
-            <center><button id='añadir{$producto['id']}' class='btn btn-success btn-sm' onclick='crearTicket({$producto["id"]},". json_encode($producto["nombre"]) .", {$producto["precio"]}," .json_encode($producto["descuento"]).")'>+</button></center>
+            <center><button id='añadir{$producto['id']}' class='btn btn-success btn-sm' onclick='crearTicket({$producto['id']},". json_encode($producto['nombre']) .", {$producto['precio']}, {$producto['descuento']}, {$producto['cant']})'>+</button></center>
         </td>
         <td>{$producto['nombre']}</td>
         <td>{$producto['marca']}</td>
