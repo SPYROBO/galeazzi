@@ -121,14 +121,40 @@ function restar(id){
 //     });
 // }
 
-function compra_cancelada(){
-    if (confirm("¿Estás seguro de que quieres eliminar la compra?")) {
-        window.location.href = 'ventas.php';
-    }
-}
+function cambiarCant(id ,cantidad, producto) {
+    let valor = prompt("Por favor, ponga la cantidad ingresante del producto: " + producto );
 
-function cambiarCant(id){
-alert(id)
+    if (valor !== null && !isNaN(valor) && valor > 0) {
+        valor = parseInt(valor)+ cantidad;
+        $.ajax({
+            url: 'actualizar_stock_bajo.php',
+            type: 'POST',
+            data: { 
+                'update': 'valorSuma', 
+                'cantidad': valor, 
+                'id': id 
+            },
+            dataType: 'json',
+            success: function (data) {
+                console.log (data.id)
+                console.log (data.cantidad)
+                if (data.error == 1) {
+                    alert("Se actualizó el stock correctamente.");
+                     window.location.href = 'http://localhost/galeazzi/php/stock_direccion.php?page=stockBajo'
+                } else {
+                    alert("No se pudo realizar la actualización.");
+                }
+            },
+            error: function (xhr, status, error) {
+                console.log("Error:", xhr.responseText);
+                alert("Hubo un error en la solicitud. Por favor, intenta nuevamente.");
+            }
+        });
+    } else if (valor === null) {
+        alert("No ingresaste ninguna cantidad.");
+    } else {
+        alert("Por favor, ingresa un número válido mayor a 0.");
+     }
 }
 
 setTimeout(function() {

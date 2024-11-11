@@ -7,7 +7,6 @@ function eliminarProducto(id) {
         dataType: 'json',
         success: function (data) {
             if(data['error']== 1){
-                window.location.href = 'stock_direccion.php';
                 alert("Realizado")
             }
             else{

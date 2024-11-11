@@ -38,18 +38,17 @@ echo '<table class="tabla-proveedores">
 
 foreach ($productosPaginados as $productos) { 
     echo "<tr>
-        <td>
-            <center><button id='{$productos['id']}' class='btn btn-success btn-sm' onclick='cambiarCant({$productos['id']})'>+</button></center>
-        </td>
-        <td>{$productos['nombre']}</td>
-        <td>{$productos['marca']}</td>
-        <td>{$productos['precio']}</td>
-        <td>{$productos['descuento']}</td>
-        <td>{$productos['descripcion']}</td>
-        <td>{$productos['cant']}</td>
-    </tr>";
+    <td>
+        <center> <button id=\"{$productos['id']}\" class=\"btn btn-success btn-sm\"onclick=\"cambiarCant({$productos['id']},{$productos['cant']}, '" . addslashes($productos['nombre']) . "')\">+</button></center>
+    </td>
+    <td>{$productos['nombre']}</td>
+    <td>{$productos['marca']}</td>
+    <td>{$productos['precio']}</td>
+    <td>{$productos['descuento']}</td>
+    <td>{$productos['descripcion']}</td>
+    <td>{$productos['cant']}</td>
+</tr>";
 }
-
 echo "</tbody>
 </table>";
 
