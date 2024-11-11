@@ -40,12 +40,14 @@ $productosPaginados = array_slice($productos, $inicioProductos, CANT_REG_PAG);
 
 echo "<div class='tabla-container'>
     <div class='tabla-container'>
-    <h3>Buscar Productos</h3>
+    <h1>Buscar Productos</h1>
     <form method='GET'>
-        <input type='text' name='busqueda' placeholder='ingrese producto,codigo o marca' value=''>
-        <button type='submit'>Buscar</button>
+    <br>
+        <input type='text' name='busqueda' placeholder='  ingrese producto,codigo o marca' value='' id='buscador'>
+        <button type='submit' id='find'>Buscar</button>
     </form>
 </div>
+<br>
     <table class='table table-hover table-bordered'>
     <thead class='thead-dark'>
         <tr>

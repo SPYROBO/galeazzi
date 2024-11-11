@@ -7,7 +7,8 @@
 </head>
 <?php session_start(); ?>
 <div>
-    <form action="php/register_info.php" method="POST">
+    <form action="php/register_info.php" method="POST" class="register">
+        <br>
         <div><h1> Registrate </h1></div>
         <?php
         if(isset($_SESSION['msj_error_register'])){

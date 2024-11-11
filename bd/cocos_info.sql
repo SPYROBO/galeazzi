@@ -25,14 +25,6 @@ VALUES
 ('La Serenísima'),
 ('Baggio');
 
-INSERT INTO dbo.info_proveedores (nombre, direccion, telefono, ciudad, email) 
-VALUES 
-('Coca-Cola FEMSA Argentina', 'Av. Santa Fe 3456', 1134456677, 'Buenos Aires', 'contacto@cokefemsa.com.ar'), -- Coca-Cola FEMSA
-('PepsiCo Argentina', 'Calle Cerrito 600', 1133321111, 'Buenos Aires', 'atencionclientes@pepsico.com.ar'), -- PepsiCo Argentina
-('Arcor S.A.I.C.', 'Av. Rivadavia 2400', 3514312222, 'Córdoba', 'atencion@arcor.com'), -- Arcor
-('Ledesma S.A.A.I.', 'Calle 25 de Mayo 450', 3804623000, 'San Salvador de Jujuy', 'info@ledesma.com.ar'), -- Ledesma
-('La Serenísima', 'Calle 12 de Octubre 3500', 1135552233, 'Buenos Aires', 'contacto@serenisima.com.ar'), -- La Serenísima
-('Baggio S.A.', 'Av. del Libertador 2100', 1148880000, 'Buenos Aires', 'contacto@baggio.com.ar'); -- Baggio
 
 INSERT INTO dbo.info_proveedores (nombre, direccion, telefono, ciudad, email) 
 VALUES 

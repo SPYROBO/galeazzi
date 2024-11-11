@@ -1,0 +1,24 @@
+#buscador{
+    margin-left: 31%;
+    font-size: 1.3em;
+    height: 40px;
+    width: 700px;
+    border-radius: 5px;
+}
+h1{
+    text-align: center;
+}
+#find{
+    color: #fff;
+    font-size: 1.3em;
+    width: 100px;
+    height: 40px;
+    background-color: #0857be;
+    border-radius: 5px;
+}
+#addProviderBtn.btn.btn-secondary{
+    background-color: #056deb;
+}
+#addProductBtn.btn.btn-primary{
+    margin-left: 43.5%;
+}

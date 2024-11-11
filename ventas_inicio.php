@@ -5,10 +5,12 @@
         <form class="mb-4" id="form_ticket">
             <div class="row g-3">
                 <div class="col-md-6">
+                    <br>
                     <label for="dni" class="form-label">DNI</label>
                     <input type="text" class="form-control" id="dni" required>
                 </div>
                 <div class="col-md-6">
+                    <br>
                     <label for="comprobante" class="form-label">Comprobante</label>
                     <select class="form-select" id="comprobante" required>
                         <option value="si">Sí</option>
@@ -46,7 +48,7 @@
                         <button class="btn btn-success w-100" type="submit" onclick="compra_efectuada()">Confirmar</button>
                     </div>
                     <div class="col-4">
-                        <button class="btn btn-secondary w-100" type="button" onclick="compra_cancelada()">Cancelar</button>
+                        <button class="btn btn-secondary w-100" type="button" id="cancelar" onclick="compra_cancelada()">Cancelar</button>
                     </div>
                 </div>
             </div>
@@ -55,6 +57,7 @@
     <!-- Buscador -->
     <div class="col-md-6">
         <center>
+            <br>
             <h5 class="text-light">Buscar Artículos</h5>
         </center>
         <div class="col">
