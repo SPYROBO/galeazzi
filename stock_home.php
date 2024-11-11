@@ -3,14 +3,7 @@
 <div class="row">
     <!-- Buscador y tabla -->
     <div class="col">
-        <form class="mb-4">
-            <div class="input-group">
-                <input type="text" class="form-control" id="validationDefault01" placeholder="Buscar artículo" required>
-                <button class="btn btn-primary" type="submit">Buscar</button>
-            </div>
-        </form>
         <?php 
-        $tipo_valor = "Eliminar";
         require_once('stock_info.php'); ?>
     </div>
 
@@ -23,7 +16,7 @@
             unset($_SESSION['reponerstock_msj']);
         } ?>
         <div id="formContainer" class="mt-4">
-            <form id="productForm" action="reponerstock.php" method="POST" class="stock-form">
+            <form id="productForm" action="nuevoStock.php" method="POST" class="stock-form">
                 <div class="mb-3">
                     <input type="text" class="form-control" placeholder="Nombre" name="nombre" required>
                 </div>
@@ -31,13 +24,16 @@
                     <input type="number" class="form-control" placeholder="Precio" name="precio" required>
                 </div>
                 <div class="mb-3">
-                    <input type="text" class="form-control" placeholder="Marca" name="marca" required>
+                    <label for="marcas">Selecciona una marca:</label>
+                    <select name="marca" id="marca_opcion" required></select>
                 </div>
                 <div class="mb-3">
-                    <input type="number" class="form-control" placeholder="Descuento" name="descuento" required>
+                    <label for="desc">Selecciona un descuento:</label>
+                    <select name="descuento" id="desc_opcion" required></select>
                 </div>
                 <div class="mb-3">
-                    <input type="text" class="form-control" placeholder="Nombre Proveedor" name="proveedor" required>
+                    <label for="prov">Selecciona un proveedor:</label>
+                    <select name="proveedor" id="prov_opcion" required></select>
                 </div>
                 <div class="mb-3">
                     <input type="number" class="form-control" placeholder="Cantidad" name="cantidad" required>
