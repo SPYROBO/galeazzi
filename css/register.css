@@ -30,5 +30,15 @@ input{
     margin-bottom: 50px;
 }
 a{
-    margin-left: 900px;
+    color: #ffffff;
+    margin-top: 20%;
+    margin-left: 20%;
+}
+.register{
+    border-radius: 6px;
+    border: 8px solid #ffffff;
+    width: 50%;
+    background: linear-gradient(to bottom right, #0a4b91, #000203); 
+    margin-top: 10%;
+    margin-left: 25%;
 }

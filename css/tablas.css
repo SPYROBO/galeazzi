@@ -10,12 +10,11 @@
     text-align: left;
 }
 .tabla-proveedores th {
-    background-color: #4d647c; /* Color de fondo de encabezado */
-    color: #dbd4d4; /* Color de texto de encabezado */
+    background-color: #01468f; /* Color de fondo de encabezado */
 }
 .tabla-proveedores tbody tr:nth-child(odd) {
-    background-color: #7a5555; /* Color de fondo para filas impares */
+    background-color: #2022a7b0; /* Color de fondo para filas impares */
 }
 .tabla-proveedores tbody tr:hover {
-    background-color: #344d65; /* Color al pasar el mouse */
+    background-color: #eb080834; /* Color al pasar el mouse */
 }

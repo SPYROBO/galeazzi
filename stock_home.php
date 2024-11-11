@@ -1,3 +1,4 @@
+
 <div class="row text-center mb-4">
 </div>
 <div class="row">
@@ -18,12 +19,14 @@
         <div id="formContainer" class="mt-4">
             <form id="productForm" action="nuevoStock.php" method="POST" class="stock-form">
                 <div class="mb-3">
+                    <br>
                     <input type="text" class="form-control" placeholder="Nombre" name="nombre" required>
                 </div>
                 <div class="mb-3">
                     <input type="number" class="form-control" placeholder="Precio" name="precio" required>
                 </div>
                 <div class="mb-3">
+                    <br>
                     <label for="marcas">Selecciona una marca:</label>
                     <select name="marca" id="marca_opcion" required></select>
                 </div>
@@ -36,11 +39,13 @@
                     <select name="proveedor" id="prov_opcion" required></select>
                 </div>
                 <div class="mb-3">
+                    <br>
                     <input type="number" class="form-control" placeholder="Cantidad" name="cantidad" required>
                 </div>
                 <div class="mb-3">
                     <input type="text" class="form-control" placeholder="Descripción" name="descripcion" required>
                 </div>
+                <br>
                 <button type="submit" class="btn btn-primary w-100">Agregar Producto</button>
             </form>
             <?php
@@ -52,20 +57,26 @@
             ?>
             <form id="providerForm" action="agregarproveedor.php" method="POST" class="stock-form d-none">
                 <div class="mb-3">
+                    <br>
                     <input type="text" class="form-control" placeholder="Nombre del Proveedor" name="nombre" required>
                 </div>
                 <div class="mb-3">
+                    <br>
                     <input type="text" class="form-control" placeholder="Teléfono" name="telefono" required>
                 </div>
                 <div class="mb-3">
+                    <br>
                     <input type="text" class="form-control" placeholder="Dirección" name="direccion" required>
                 </div>
                 <div class="mb-3">
+                    <br>
                     <input type="text" class="form-control" placeholder="Ciudad" name="ciudad" required>
                 </div>
                 <div class="mb-3">
+                    <br>
                     <input type="text" class="form-control" placeholder="Email" name="email" required>
                 </div>
+                <br>
                 <button type="submit" class="btn btn-primary w-100">Agregar Proveedor</button>
             </form>
         </div>
