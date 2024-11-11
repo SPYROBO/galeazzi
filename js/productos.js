@@ -36,12 +36,21 @@ let productolocal = document.getElementById("cant" + id);
 contador = parseInt(productolocal.textContent);
 contador++
 if(contador <= cantidad_total){
+    comparacion = "fila"+id
+    medida = comparacion.length
     productolocal.innerHTML = contador;
+    for(i = 0; i < lista.length; i++){
+        busqueda = lista[i].search('cant'+id)
+        if(busqueda != -1){
+            reemplazante = lista[i].replace(`'cant${id}'>${contador-1}`,`'cant${id}'>${contador}`)
+            lista.splice(i,1,reemplazante)
+        }
+    }
     descuento_total = 0
     if(parseInt(document.getElementById("descuento"+id).textContent) != 0){
         descuento_total = parseInt(document.getElementById("descuento"+id).textContent) * 0.01
     }
-    document.getElementById("final" + id).innerHTML = (contador * parseInt(document.getElementById("precio" + id).textContent) - descuento_total * parseInt(document.getElementById("precio" + id).textContent))
+    document.getElementById("final" + id).innerHTML = Math.round(contador * parseInt(document.getElementById("precio" + id).textContent) - descuento_total * parseInt(document.getElementById("precio" + id).textContent), -1)
 } else {
     contador--
 }
@@ -58,14 +67,23 @@ function restar(id){
     productolocal.innerHTML = contador;
     if(contador > 0){
         descuento_total = 0
+        for(i = 0; i < lista.length; i++){
+            busqueda = lista[i].search('cant'+id)
+            if(busqueda != -1){
+                reemplazante = lista[i].replace(`'cant${id}'>${contador+1}`,`'cant${id}'>${contador}`)
+                lista.splice(i,1,reemplazante)
+            }
+        }
         if(parseInt(document.getElementById("descuento"+id).textContent) != 0){
         descuento_total = parseInt(document.getElementById("descuento"+id).textContent) * 0.01
         }
         document.getElementById("final" + id).innerHTML = (contador * parseInt(document.getElementById("precio" + id).textContent) - descuento_total * parseInt(document.getElementById("precio" + id).textContent))
     } else {
+        comparacion = "fila"+id
+        medida = comparacion.length
         for(i = 0; i < lista.length; i++){
-            if(lista[i].slice(8,14) == "fila"+id){
-                    lista.splice(i,1)
+            if(lista[i].slice(8,8+medida) == "fila"+id){
+                lista.splice(i,1)
             }
         }
         document.getElementById("fila"+id).remove()
@@ -74,52 +92,54 @@ function restar(id){
     
 }
 
-// function compra_efectuada(){
-//     ticket_completo = []
-//     ticket = document.querySelector('#ticket')
-//     contador = 0
-//     ticket_lista = {}
-//     filas = ticket.querySelectorAll('td')
-//     filas.forEach(function(fila){
-//         switch(contador){
-//                 case 0: 
-//                     ticket_lista.id = fila.id
-//                     contador++
-//                     break;
-//                 case 1:
-//                     ticket_lista.nombre = document.getElementById(fila.id).textContent
-//                     contador++
-//                     break;
-//                 case 2:
-//                     ticket_lista.cantidad = document.getElementById(fila.id).textContent
-//                     contador++
-//                     break;
-//                 case 3:
-//                     ticket_lista.precio = document.getElementById(fila.id).textContent
-//                     contador++
-//                     break;
-//                 case 4:
-//                     ticket_lista.descuento = document.getElementById(fila.id).textContent
-//                     contador++
-//                     break;
-//                 case 5:
-//                     ticket_lista.precio_final = document.getElementById(fila.id).textContent
-//                     contador = 0
-//                     ticket_completo.push(ticket_lista)
-//                     ticket_lista = {}
-//                     break;
-//         }
-//     });
-//     $.ajax({
-//         url: 'compra_efectuada.php',
-//         data: ticket_completo,
-//         type: 'POST',
-//         dataType: 'json',
-//         success: function (data) {
-            
-//         }
-//     });
-// }
+function compra_efectuada(){
+    document.getElementById('form_ticket').addEventListener("submit", function(event){})
+    ticket_completo = []
+    ticket = document.querySelector('#ticket')
+    contador = 0
+    ticket_lista = {}
+    filas = ticket.querySelectorAll('td')
+    filas.forEach(function(fila){
+        switch(contador){
+                case 0: 
+                    ticket_lista.id = fila.id
+                    contador++
+                    break;
+                case 1:
+                    ticket_lista.nombre = document.getElementById(fila.id).textContent
+                    contador++
+                    break;
+                case 2:
+                    ticket_lista.cantidad = document.getElementById(fila.id).textContent
+                    contador++
+                    break;
+                case 3:
+                    ticket_lista.precio = document.getElementById(fila.id).textContent
+                    contador++
+                    break;
+                case 4:
+                    ticket_lista.descuento = document.getElementById(fila.id).textContent
+                    contador++
+                    break;
+                case 5:
+                    ticket_lista.precio_final = document.getElementById(fila.id).textContent
+                    contador = 0
+                    ticket_completo.push(ticket_lista)
+                    ticket_lista = {}
+                    break;
+        }
+
+    });
+    $.ajax({
+        url: 'compra_efectuada.php',
+        data: ticket_completo,
+        type: 'POST',
+        dataType: 'json',
+        success: function (data) {
+            console.log(data)
+        }
+    });
+}
 
 function compra_cancelada(){
     if (confirm("¿Estás seguro de que quieres eliminar la compra?")) {
