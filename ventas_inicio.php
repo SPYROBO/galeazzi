@@ -72,34 +72,38 @@
     <!-- Tarjetas de información -->
     <div class="row mt-4">
         <div class="col">
-            <div class="card mb-4" style="max-width: 150px; max-height: 160px;">
+            <div class="card mb-4" style="max-width: 150px; max-height: 200px;">
                 <div class="card-body text-center">
                     <img src="../imagenes/productos.png" style="max-width: 100px; max-height: 100px;" class="img-fluid mb-3" alt="Productos">
                     <h5 class="card-title">Productos</h5>
+                    <p> Cantidad : <span id = "cant_productos">0</span>  </p>
                 </div>
             </div>
         </div>
         <div class="col">
-            <div class="card mb-4" style="max-width: 150px; max-height: 160px;">
+            <div class="card mb-4" style="max-width: 150px; max-height: 200px;">
                 <div class="card-body text-center">
                     <img src="../imagenes/clientes.png" style="max-width: 100px; max-height: 100px;" class="img-fluid mb-3" alt="Clientes">
                     <h5 class="card-title">Clientes</h5>
+                    <p> Cantidad : <span id = "cant_clientes">0</span>  </p>
                 </div>
             </div>
         </div>
         <div class="col">
-            <div class="card mb-4" style="max-width: 150px; max-height: 160px;">
+            <div class="card mb-4" style="max-width: 150px; max-height: 200px;">
                 <div class="card-body text-center">
                     <img src="../imagenes/compras.png" style="max-width: 100px; max-height: 100px;" class="img-fluid mb-3" alt="Ventas">
                     <h5 class="card-title">Ventas</h5>
+                    <p> Cantidad : <span id = "cant_ventas">0</span>  </p>
                 </div>
             </div>
         </div>
         <div class="col">
-            <div class="card mb-4" style="max-width: 150px; max-height: 160px;">
+            <div class="card mb-4" style="max-width: 150px; max-height: 200px;">
                 <div class="card-body text-center">
                     <img src="../imagenes/ingresos.png" style="max-width: 100px; max-height: 100px;" class="img-fluid mb-3" alt="Ingresos">
                     <h5 class="card-title">Ingresos</h5>
+                    <p> Cantidad : <span id = "cant_ingresos">0</span>  </p>
                 </div>
             </div>
         </div>
