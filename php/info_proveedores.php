@@ -10,7 +10,7 @@ $res = $conn->query($consul);
 $proveedores = $res->fetchAll(PDO::FETCH_ASSOC);
 
 $pagProveedores = isset($_GET['pagProveedores']) ? (int)$_GET['pagProveedores'] : 1;
-define('CANT_REG_PAG', 2);
+define('CANT_REG_PAG', 5);
 $cantPagProveedores = ceil(count($proveedores) / CANT_REG_PAG);
 $inicioProveedores = ($pagProveedores - 1) * CANT_REG_PAG;
 

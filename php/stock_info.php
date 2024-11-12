@@ -28,7 +28,7 @@ $productos = $result->fetchAll(PDO::FETCH_ASSOC);
 }
 
 $pagProductos = isset($_GET['pagProductos']) ? (int)$_GET['pagProductos'] : 1;
-define('CANT_REG_PAG', 2);
+define('CANT_REG_PAG', 5 );
 $cantPagProductos = ceil(count($productos) / CANT_REG_PAG);
 $inicioProductos = ($pagProductos - 1) * CANT_REG_PAG;
 
