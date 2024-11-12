@@ -145,14 +145,40 @@ function compra_efectuada(){
     });
 }
 
-function compra_cancelada(){
-    if (confirm("¿Estás seguro de que quieres eliminar la compra?")) {
-        window.location.href = 'ventas.php';
-    }
-}
+function cambiarCant(id ,cantidad, producto) {
+    let valor = prompt("Por favor, ponga la cantidad ingresante del producto: " + producto );
 
-function cambiarCant(id){
-alert(id)
+    if (valor !== null && !isNaN(valor) && valor > 0) {
+        valor = parseInt(valor)+ cantidad;
+        $.ajax({
+            url: 'actualizar_stock_bajo.php',
+            type: 'POST',
+            data: { 
+                'update': 'valorSuma', 
+                'cantidad': valor, 
+                'id': id 
+            },
+            dataType: 'json',
+            success: function (data) {
+                console.log (data.id)
+                console.log (data.cantidad)
+                if (data.error == 1) {
+                    alert("Se actualizó el stock correctamente.");
+                     window.location.href = 'http://localhost/galeazzi/php/stock_direccion.php?page=stockBajo'
+                } else {
+                    alert("No se pudo realizar la actualización.");
+                }
+            },
+            error: function (xhr, status, error) {
+                console.log("Error:", xhr.responseText);
+                alert("Hubo un error en la solicitud. Por favor, intenta nuevamente.");
+            }
+        });
+    } else if (valor === null) {
+        alert("No ingresaste ninguna cantidad.");
+    } else {
+        alert("Por favor, ingresa un número válido mayor a 0.");
+     }
 }
 
 setTimeout(function() {
@@ -160,17 +186,37 @@ setTimeout(function() {
     if (alertMessage) {
         alertMessage.style.display = 'none'; 
     }
-}, 9000);
+}, 5000);
 
 function showForm(type) {
     const productForm = document.getElementById('productForm');
     const providerForm = document.getElementById('providerForm');
+    const marcaForm = document.getElementById('marcaForm');
+    const descForm = document.getElementById('descForm');
 
-    if (type === 'product') {
-        productForm.classList.remove('d-none');
-        providerForm.classList.add('d-none');
-    } else {
-        providerForm.classList.remove('d-none');
-        productForm.classList.add('d-none');
+    switch (type) {
+        case 'product':
+            productForm.classList.remove('d-none');
+            providerForm.classList.add('d-none');
+            descForm.classList.add('d-none');
+            marcaForm.classList.add('d-none');
+        break;
+        case 'provider':
+            providerForm.classList.remove('d-none');
+            productForm.classList.add('d-none');
+            descForm.classList.add('d-none');
+            marcaForm.classList.add('d-none');
+            break;
+        case 'marca':
+            marcaForm.classList.remove('d-none');
+            providerForm.classList.add('d-none');
+            productForm.classList.add('d-none');
+            descForm.classList.add('d-none');
+            break;
+        case 'descuento':
+            descForm.classList.remove('d-none');
+            marcaForm.classList.add('d-none');
+            providerForm.classList.add('d-none');
+            productForm.classList.add('d-none');
     }
 }

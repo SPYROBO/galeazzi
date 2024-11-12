@@ -12,25 +12,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $cantidad = $_POST["cantidad"];
     $msj = '';
 
-    $sql = "SELECT * FROM productos WHERE nombre = :nombre AND id_marca = :id_marca";
-    $stmt = $conn->prepare($sql);
-    $stmt->bindParam(':nombre', $nombre);
-    $stmt->bindParam(':id_marca', $marcaId);
-    $stmt->execute();
-    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-    if (empty($result)) {
-        $sql = "INSERT INTO productos (nombre, descripcion, id_marca, id_descuento, precio) VALUES (?, ?, ?, ?, ?)";
+    if ($precio <= 0) {
+        $msj = 'El precio debe ser mayor que cero.';
+    }
+    elseif ($cantidad < 50) {
+        $msj = 'La cantidad debe ser al menos 50.';
+    } else {
+        $sql = "SELECT * FROM productos WHERE nombre = :nombre AND id_marca = :id_marca";
         $stmt = $conn->prepare($sql);
-        if ($stmt->execute([$nombre, $descripcion, $marcaId, $descuentoId, $precio])) {
-            $msj = 'Producto insertado';
-            $sql = "SELECT * FROM productos WHERE nombre = :nombre AND id_marca = :id_marca";
+        $stmt->bindParam(':nombre', $nombre);
+        $stmt->bindParam(':id_marca', $marcaId);
+        $stmt->execute();
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        if (empty($result)) {
+            $sql = "INSERT INTO productos (nombre, descripcion, id_marca, id_descuento, precio) VALUES (?, ?, ?, ?, ?)";
             $stmt = $conn->prepare($sql);
-            $stmt->bindParam(':nombre', $nombre);
-            $stmt->bindParam(':id_marca', $marcaId);
-            $stmt->execute();
-            $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            $producId = $result[0]['id'];
+            if ($stmt->execute([$nombre, $descripcion, $marcaId, $descuentoId, $precio])) {
+                $msj = 'Producto insertado';
+                $sql = "SELECT * FROM productos WHERE nombre = :nombre AND id_marca = :id_marca";
+                $stmt = $conn->prepare($sql);
+                $stmt->bindParam(':nombre', $nombre);
+                $stmt->bindParam(':id_marca', $marcaId);
+                $stmt->execute();
+                $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                $producId = $result[0]['id'];
 
                 $sql = "INSERT INTO proveedores (id_proveedor ,id_producto) VALUES (?,?)";
                 $stmt = $conn->prepare($sql);
@@ -39,12 +45,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $sql = "INSERT INTO stock (id_proveedor, id_producto, cantidad) VALUES (?,?,?)";
                 $stmt = $conn->prepare($sql);
                 $stmt->execute([$proveedorId, $producId, $cantidad]);
+            } else {
+                $msj = 'Error al insertar el producto.';
+            }
         } else {
-            $msj = 'Error al insertar el producto.';
+            $msj = 'El producto ya se encuentra en la Base de Datos';
         }
-    } else {
-        $msj = 'El producto ya se encuentra en la Base de Datos';
     }
 }
-$_SESSION['reponerstock_msj'] = $msj;
+$_SESSION['msj'] = $msj;
 header('Location: stock_direccion.php');

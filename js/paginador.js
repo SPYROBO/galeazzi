@@ -7,11 +7,11 @@ $(document).ready(function () {
         dataType: 'json',
         success: function (data) {
             var elementosTot = data.length;
-            var mostrarRegistros = 2;
+            var mostrarRegistros = 5;
             var numeroTotPag = Math.ceil(elementosTot / mostrarRegistros);
             var pagActual = 1;
             var offset = (pagActual - 1) * mostrarRegistros;
-
+            $('#cant_productos').html(elementosTot);
             function mostrarRegistrosPagina() {
                 var registrosHTML = '<table class="table table-bordered"><thead><tr>' +
                     '<th>Agregar</th>' +

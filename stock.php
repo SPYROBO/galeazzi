@@ -28,8 +28,7 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'home';
                 </ul>
             </div>
         </nav>
-        <div id="contenido">
-            <main class="col-md-9 ms-sm-auto col-lg-10 px-4">
+            <main class="col ms-sm-auto col-lg-10 px-4">
                <?php
                 switch ($page){
                     case 'home':
@@ -48,6 +47,5 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'home';
                 }
                ?>
             </main>
-        </div>
     </div>
 </div>

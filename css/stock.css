@@ -1,8 +1,8 @@
 #buscador{
-    margin-left: 31%;
+    align-items: center;
     font-size: 1.3em;
     height: 40px;
-    width: 700px;
+    width: 400px;
     border-radius: 5px;
 }
 h1{
@@ -16,9 +16,5 @@ h1{
     background-color: #0857be;
     border-radius: 5px;
 }
-#addProviderBtn.btn.btn-secondary{
-    background-color: #056deb;
-}
-#addProductBtn.btn.btn-primary{
-    margin-left: 43.5%;
-}
+
+
