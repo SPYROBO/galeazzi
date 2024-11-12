@@ -1,10 +1,3 @@
-INSERT INTO dbo.clientes (dni, apellido, email, telefono) 
-VALUES 
-(203456789, 'Gomez', 'gomez@gmail.com', 1123456789),
-(204567890, 'Martínez', 'martinez@yahoo.com', 1134567890),
-(205678901, 'Pérez', 'perez@hotmail.com', 1145678901),
-(206789012, 'Rodríguez', 'rodriguez@outlook.com', 1156789012);
-
 INSERT INTO dbo.descuentos (nombre) 
 VALUES 
 (10),  
