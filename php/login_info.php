@@ -14,14 +14,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $stmt->bindParam(':dni', $dni);
        if( $stmt->execute()){
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        var_dump($result);
         if(count($result) != 0 ){
             if($result[0]['dni'] == $dni && $result[0]['contrasena'] == $contra){
             if($result[0]['cod_emp'] == 1){
+                $_SESSION['id_empleado'] =  $result[0]['id'];
                 header('Location: stock_direccion.php');
                 exit();
             }
             if($result[0]['cod_emp'] == 2){
+                $_SESSION['id_empleado'] =  $result[0]['id'];
                 header('Location: ventas_direccion.php');
                 exit();
             }
@@ -40,5 +41,5 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 }
 
 $_SESSION['msj_error'] = $error;
-header('Location: ../login.php')
+header('Location: ../login.php');
 ?>

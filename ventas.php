@@ -26,6 +26,7 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'inicio';
                     </li>
                 </ul>
             </div>
+            <button onclick="cerrarSesion()">Cerrar Sesión</button>
         </nav>
         <div id="contenido">
             <main class="col-md-9 ms-sm-auto col-lg-10 px-4">

@@ -16,14 +16,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (!empty($contra1) && !empty($contra2) && $contra1 != $contra2) {
         $error = "Las contraseñas no coinciden";
-    } elseif ($puesto != "reponedor" && $puesto != "vendedor") {
-        $error = "El puesto ingresado es incorrecto";
     } else {
         try {
-            if ($puesto == 'reponedor') {
+            if ($puesto == 'Repositor') {
                 $cod_emp = 1;
                 $vista = "stock";
-            } elseif ($puesto == 'vendedor') {
+            } elseif ($puesto == 'Vendedor') {
                 $cod_emp = 2;
                 $vista = "ventas";
             }
@@ -38,6 +36,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $sql = "INSERT INTO empleados (nombre, dni, contrasena, contacto, direccion, correo, cod_emp) VALUES (?, ?, ?,?,?,?,? )";
                 $stmt = $conn->prepare($sql);
                 if ($stmt->execute([$nombre, $dni, $contra1, $numero, $direccion, $correo, $cod_emp])) {
+                    $ultimoId = $conn->lastInsertId();
+                    $_SESSION['id_empleado'] = $ultimoId;
                     if ($cod_emp == 1) {
                         header('Location: stock_direccion.php');
                     } else {

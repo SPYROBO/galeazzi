@@ -19,7 +19,7 @@
                 </div>
                 <div class="col-md-6">
                     <label for="tipoPago" class="form-label">Tipo de Pago</label>
-                    <select class="form-select" id="tipoPago" required>
+                    <select name='' class="form-select" id="tipoPago" required>
                         <option value="">Seleccione</option>
                         <option value="3">Efectivo</option>
                         <option value="1">Tarjeta</option>

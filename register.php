@@ -24,7 +24,11 @@
         <input type="email" placeholder="Correo electrónico" name="Correo" required>
         <input type="password" placeholder="Contraseña" name="Contra1" pattern=".{7,}" title="La contraseña debe tener al menos 7 caracteres" required>
         <input type="password" placeholder="Verificar Contraseña" name="Contra2" required>
-        <input type="text" placeholder="Puesto reponedor/vendedor" name="Puesto" required>
+        <label for="prov">Selecciona un cargo:</label>
+            <select name="Puesto" id="emp_opcion" required>
+                <option value = "Repositor">Repositor</option>
+                <option value = "Vendedor"> Vendedor</option>
+            </select>
         <input type="submit" value="Registrarse" class="registrarse">
         <a href="login.php"> Iniciar Sesión </a>
     </form>

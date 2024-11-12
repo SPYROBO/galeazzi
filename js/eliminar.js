@@ -35,3 +35,20 @@ function eliminarProveedor(id, id_produc) {
     });
 }
 }
+function cerrarSesion(){
+    if (confirm("¿Estás seguro de querer cerrar sesión?")) {
+        $.ajax({
+            url: 'logout.php',
+            type: 'POST',
+            dataType: 'json',
+            success: function (data) {
+                if(data['error']== 1){
+                    window.location.href = '../index.php';
+                }
+                else{
+                    alert("No se pudo realizar")
+                }
+            }
+        });
+    }
+}
