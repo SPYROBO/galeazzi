@@ -148,21 +148,10 @@ ul.nav.flex-column{
     text-align: center;
     font-size: 1.5em;
 }
-
-#paginacion.paginacion{
-    margin-left: 50%;
-    border-radius: 3px;
-    width: 30px;
-    height: 30px;
-    text-align: center;
- background-color: #0056b3;
-}
 #cancelar.btn.btn-secondary.w-100{
     background-color: red;
 }
-.navbar-brand{
-margin-left: 50%;
-}
+
 .paginador_stock{
     justify-content: center; 
     align-items: center; 
@@ -170,4 +159,58 @@ margin-left: 50%;
 .msj_error{
     margin-top: 10px;
     justify-content: center; 
+}
+
+.paginador {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.paginador a, .paginador span {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    text-decoration: none;
+    padding: 8px 12px;
+    margin: 0 5px;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.paginador .page {
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+.paginador .current {
+    color: #fff;
+    background-color: #007bff;
+    cursor: default;
+}
+
+.paginador .prev, .paginador .next {
+    color: #007bff;
+    background-color: #f5f5f5;
+    font-weight: bold;
+}
+
+.paginador a:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.paginador .prev:hover, .paginador .next:hover {
+    background-color: #0056b3;
+    color: #fff;
+}
+
+.paginador .prev[disabled], .paginador .next[disabled] {
+    color: #ccc;
+    background-color: #f5f5f5;
+    cursor: not-allowed;
+}
+
+.paginador {
+    margin-top: 20px;
 }

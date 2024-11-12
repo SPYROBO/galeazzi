@@ -193,14 +193,14 @@ function showForm(type) {
         case 'product':
             productForm.classList.remove('d-none');
             providerForm.classList.add('d-none');
-            marcaForm.classList.add('d-none');
             descForm.classList.add('d-none');
+            marcaForm.classList.add('d-none');
         break;
         case 'provider':
             providerForm.classList.remove('d-none');
             productForm.classList.add('d-none');
-            marcaForm.classList.add('d-none');
             descForm.classList.add('d-none');
+            marcaForm.classList.add('d-none');
             break;
         case 'marca':
             marcaForm.classList.remove('d-none');
@@ -209,10 +209,9 @@ function showForm(type) {
             descForm.classList.add('d-none');
             break;
         case 'descuento':
+            descForm.classList.remove('d-none');
+            marcaForm.classList.add('d-none');
             providerForm.classList.add('d-none');
             productForm.classList.add('d-none');
-            marcaForm.classList.add('d-none');
-            descForm.classList.remove('d-none');
-            break;
     }
 }
