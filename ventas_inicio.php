@@ -26,10 +26,6 @@
                         <option value="mercado_pago">Mercado Pago</option>
                     </select>
                 </div>
-                <div class="col-md-6">
-                    <label for="cliente" class="form-label">Cliente</label>
-                    <input type="text" class="form-control" id="cliente" required>
-                </div>
                 <table class="table table-secondary table-bordered mt-3">
                     <thead class="thead-dark">
                         <tr>
