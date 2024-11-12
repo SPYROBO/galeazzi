@@ -4,11 +4,15 @@
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $email = strtolower($_POST['email']);
         $nombre = strtolower($_POST['nombre']);                                                                         
-        $tel = $_POST['telefono'];
+        $tel = intval($_POST['telefono']);
         $dir = $_POST['direccion'];
         $ciudad = $_POST['ciudad'];
         $msj = '';
-        try{
+        if($tel <= 0){
+            $msj = "Ingrese un número de teléfono válido.";
+        }
+        else{
+            try{
             $sql = "SELECT * FROM info_proveedores WHERE email = :email AND telefono = :tel";
             $stmt = $conn->prepare($sql);
             $stmt->bindParam(':email', $email);
@@ -28,11 +32,12 @@
             else{
                 $msj = 'El proveedor ya existe.';
             }
+            }
+            catch (PDOException $e) {
+                die("Error al insertar datos: " . $e->getMessage());
+            }
         }
-        catch (PDOException $e) {
-            die("Error al insertar datos: " . $e->getMessage());
-        }
-    }
-    $_SESSION['msj_proveedores'] = $msj;
+}
+    $_SESSION['msj'] = $msj;
     header('Location: stock_direccion.php');
 ?>

@@ -38,13 +38,12 @@ if ($inicioProductos < 0) {
 
 $productosPaginados = array_slice($productos, $inicioProductos, CANT_REG_PAG);
 
-echo "<div class='tabla-container'>
-    <div class='tabla-container'>
+echo "<div>
     <h1>Buscar Productos</h1>
     <form method='GET'>
     <br>
-        <input type='text' name='busqueda' placeholder='  ingrese producto,codigo o marca' value='' id='buscador'>
-        <button type='submit' id='find'>Buscar</button>
+       <center> <input type='text' name='busqueda' placeholder='  ingrese producto,codigo o marca' value='' id='buscador'>
+        <button type='submit' id='find'>Buscar</button> </center>
     </form>
 </div>
 <br>
@@ -79,7 +78,7 @@ foreach ($productosPaginados as $producto) {
 echo "</tbody>
 </table>
 <nav aria-label='Page navigation example'>
-    <ul class='pagination'>";
+    <center><ul class='pagination paginador_stock'>";
 
 for ($i = 1; $i <= $cantPagProductos; $i++) {
     echo "<li class='page-item " . ($i == $pagProductos ? 'active' : '') . "'>
@@ -88,5 +87,5 @@ for ($i = 1; $i <= $cantPagProductos; $i++) {
 }
 
 echo "</ul>
-</nav>";
+</nav> ";
 ?>

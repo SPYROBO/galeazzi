@@ -181,17 +181,38 @@ setTimeout(function() {
     if (alertMessage) {
         alertMessage.style.display = 'none'; 
     }
-}, 9000);
+}, 5000);
 
 function showForm(type) {
     const productForm = document.getElementById('productForm');
     const providerForm = document.getElementById('providerForm');
+    const marcaForm = document.getElementById('marcaForm');
+    const descForm = document.getElementById('descForm');
 
-    if (type === 'product') {
-        productForm.classList.remove('d-none');
-        providerForm.classList.add('d-none');
-    } else {
-        providerForm.classList.remove('d-none');
-        productForm.classList.add('d-none');
+    switch (type) {
+        case 'product':
+            productForm.classList.remove('d-none');
+            providerForm.classList.add('d-none');
+            marcaForm.classList.add('d-none');
+            descForm.classList.add('d-none');
+        break;
+        case 'provider':
+            providerForm.classList.remove('d-none');
+            productForm.classList.add('d-none');
+            marcaForm.classList.add('d-none');
+            descForm.classList.add('d-none');
+            break;
+        case 'marca':
+            marcaForm.classList.remove('d-none');
+            providerForm.classList.add('d-none');
+            productForm.classList.add('d-none');
+            descForm.classList.add('d-none');
+            break;
+        case 'descuento':
+            providerForm.classList.add('d-none');
+            productForm.classList.add('d-none');
+            marcaForm.classList.add('d-none');
+            descForm.classList.remove('d-none');
+            break;
     }
 }

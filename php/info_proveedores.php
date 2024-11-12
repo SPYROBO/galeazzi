@@ -54,7 +54,7 @@ echo "</tbody>
 </table>";
 
 echo '<nav aria-label="Page navigation example">
-    <ul class="pagination">';
+    <ul class="pagination paginador_stock">';
 
 for ($i = 1; $i <= $cantPagProveedores; $i++) {
     echo "<li class='page-item " . ($i == $pagProveedores ? 'active' : '') . "'>

@@ -11,7 +11,7 @@ $(document).ready(function () {
             var numeroTotPag = Math.ceil(elementosTot / mostrarRegistros);
             var pagActual = 1;
             var offset = (pagActual - 1) * mostrarRegistros;
-
+            $('#cant_productos').html(elementosTot);
             function mostrarRegistrosPagina() {
                 var registrosHTML = '<table class="table table-bordered"><thead><tr>' +
                     '<th>Agregar</th>' +

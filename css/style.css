@@ -2,6 +2,8 @@ body {
     background: linear-gradient(to bottom right, #052649, #000203); 
     color: #ffffff;
     font-family: 'Arial', sans-serif;
+    overflow: hidden;
+    height: 100%;
 }
 
 h2, h5 {
@@ -111,12 +113,25 @@ h2, h5 {
 }
 #productForm {
     max-width: 600px; 
+    max-height: 550px;
     margin: 0 auto;
 }
 #providerForm {
     max-width: 600px; 
+    max-height: 550px;
     margin: 0 auto; 
 }
+#marcaForm {
+    max-width: 600px; 
+    max-height: 200px;
+    margin: 0 auto; 
+}
+#descForm {
+    max-height: 200px;
+    max-width: 600px; 
+    margin: 0 auto; 
+}
+
 .alert-message{
     margin-top: 20px;
     max-width: 400px; 
@@ -133,9 +148,7 @@ ul.nav.flex-column{
     text-align: center;
     font-size: 1.5em;
 }
-.page-item.active{
-margin-left: 50%;
-}
+
 #paginacion.paginacion{
     margin-left: 50%;
     border-radius: 3px;
@@ -149,4 +162,12 @@ margin-left: 50%;
 }
 .navbar-brand{
 margin-left: 50%;
+}
+.paginador_stock{
+    justify-content: center; 
+    align-items: center; 
+}
+.msj_error{
+    margin-top: 10px;
+    justify-content: center; 
 }
