@@ -21,9 +21,9 @@
                     <label for="tipoPago" class="form-label">Tipo de Pago</label>
                     <select class="form-select" id="tipoPago" required>
                         <option value="">Seleccione</option>
-                        <option value="efectivo">Efectivo</option>
-                        <option value="tarjeta">Tarjeta</option>
-                        <option value="mercado_pago">Mercado Pago</option>
+                        <option value="3">Efectivo</option>
+                        <option value="1">Tarjeta</option>
+                        <option value="2">Mercado Pago</option>
                     </select>
                 </div>
                 <div class="col-md-6">

@@ -93,7 +93,6 @@ function restar(id){
 }
 
 function compra_efectuada(){
-    document.getElementById('form_ticket').addEventListener("submit", function(event){})
     ticket_completo = []
     ticket = document.querySelector('#ticket')
     contador = 0
@@ -128,7 +127,13 @@ function compra_efectuada(){
                     ticket_lista = {}
                     break;
         }
-
+        info = []
+        info_dni = document.getElementById("dni").value
+        info_cliente = document.getElementById("cliente").value
+        info_pago = document.getElementById("tipoPago").value
+        info_compro = document.getElementById("comprobante").value
+        info.push(info_dni,info_cliente,info_pago,info_compro)
+        ticket_completo.push(info)
     });
     $.ajax({
         url: 'compra_efectuada.php',
