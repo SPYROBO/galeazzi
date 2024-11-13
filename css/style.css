@@ -234,3 +234,23 @@ ul.nav.flex-column{
     border-bottom: 5px solid #0e46ae;
 
 }
+.tabla-ventas {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-family: Arial, sans-serif;
+}
+.tabla-ventas th, .tabla-ventas td {
+    border: 1px solid #ffffff; /* Color de borde personalizado */
+    padding: 10px;
+    text-align: left;
+}
+.tabla-ventas th {
+    background-color: #01468f; /* Color de fondo de encabezado */
+}
+.tabla-ventas tbody tr:nth-child(odd) {
+    background-color: #2022a7b0; /* Color de fondo para filas impares */
+}
+.tabla-ventas tbody tr:hover {
+    background-color: #eb080834; /* Color al pasar el mouse */
+}

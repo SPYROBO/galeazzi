@@ -143,6 +143,7 @@ function compra_efectuada(){
         }
     });
     window.open('../factura.php', '_blank');
+    window.location.href = 'ventas_direccion.php'; 
 }
 
 function cambiarCant(id ,cantidad, producto) {

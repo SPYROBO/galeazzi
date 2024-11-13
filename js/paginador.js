@@ -47,8 +47,8 @@ $(document).ready(function () {
                 actualizarNumeroTotPag();
                 
                 for (var i = offset; i < offset + mostrarRegistros && i < elementosTot; i++) {
-                    registrosHTML += `<tr>
-                        <td><button id="añadir${productosFiltrados[i].id}" onclick="crearTicket(${productosFiltrados[i].id},'${productosFiltrados[i].nombre}',${productosFiltrados[i].precio},${productosFiltrados[i].descuento},${productosFiltrados[i].cant})"> + </button></td>
+                    registrosHTML += `<tr style= "text-align:center;">
+                        <td><button class="btn btn-success w-90" id="añadir${productosFiltrados[i].id}" onclick="crearTicket(${productosFiltrados[i].id},'${productosFiltrados[i].nombre}',${productosFiltrados[i].precio},${productosFiltrados[i].descuento},${productosFiltrados[i].cant})"> + </button></td>
                         <td> ${productosFiltrados[i].nombre} </td>
                         <td> ${productosFiltrados[i].marca} </td>
                         <td> ${productosFiltrados[i].descuento} </td>

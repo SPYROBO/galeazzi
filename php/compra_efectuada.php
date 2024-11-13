@@ -11,9 +11,9 @@ if(isset($_POST['ticket'])){
         for($i = 0; $i < count($ticket)-1; $i++){
             $suma += $ticket[$i]['precio_final'];
         }
-        $sql = "INSERT INTO ventas (num_factura ,dni_cliente, id_empleado, fecha_venta, total, id_tipo_pago) VALUES (?,?,?,?,?,?) ";
+        $sql = "INSERT INTO ventas (dni_cliente, id_empleado, fecha_venta, total, id_tipo_pago) VALUES (?,?,?,?,?,?) ";
         $result = $conn->prepare($sql);
-        $result -> execute([1231,intval(end($ticket)[0]),$id_emp,date("Y-m-d"),$suma,intval(end($ticket)[1])]);
+        $result -> execute([intval(end($ticket)[0]),$id_emp,date("Y-m-d"),$suma,intval(end($ticket)[1])]);
         $sql = "SELECT IDENT_CURRENT ('ventas')";
         $stmt = $conn->prepare($sql);
         $stmt -> execute();
