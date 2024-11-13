@@ -7,7 +7,7 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'inicio';
         <nav class="col-md-3 col-lg-2 d-md-block sidebarside">
             <div class="position-sticky">
                 <br>
-                <h4 class="text-light text-center mb-3">Menú de Gestión</h4>
+                <h4 class="text-light text-center mb-3 side_title">Menú de Gestión</h4>
                 <ul class="nav flex-column">
                     <li class="nav-item">
                         <a class="nav-link text-light" href="?page=inicio">
