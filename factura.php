@@ -1,78 +1,41 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/factura.css">
     <title>Factura de Compra</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-            background-color: #f4f4f4;
-        }
-
-        .invoice {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            max-width: 600px;
-            margin: auto;
-        }
-
-        h1 {
-            text-align: center;
-            color: #333;
-        }
-
-        .header, .footer {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .details, .items {
-            width: 100%;
-            margin-bottom: 20px;
-        }
-
-        .details td, .items th, .items td {
-            padding: 10px;
-            border: 1px solid #ddd;
-        }
-
-        .details {
-            margin-bottom: 30px;
-        }
-
-        .items th {
-            background-color: #f2f2f2;
-        }
-
-        .total {
-            font-weight: bold;
-            text-align: right;
-        }
-
-        .footer {
-            font-size: 12px;
-            color: #777;
-        }
-    </style>
 </head>
 <body>
-    <div class="invoice">
+    <?php if (isset($_SESSION['dic_ticket'])){
+        $array = $_SESSION['dic_ticket'];
+        end($array);
+        $datos_cli = key($array);
+        $precio_total = 0;
+        date_default_timezone_set('America/Argentina/Buenos_Aires');
+        $metodo_pago = "";
+        if($array[$datos_cli][1] == 1){
+            $metodo_pago= "Tarjeta";
+        }
+        elseif($array[$datos_cli][1] == 2){
+            $metodo_pago= "Mercado Pago";
+        }
+        else{
+            $metodo_pago= "Efectivo";
+        }
+    echo '<div class="invoice">
         <div class="header">
             <h1>Factura de Compra</h1>
         </div>
         <table class="details">
             <tr>
-                <td><strong>Nombre del Cliente:</strong> Juan Pérez</td>
-                <td><strong>Fecha:</strong> 08/10/2024</td>
+                <td><strong>DNI del Cliente:</strong> '.$array[$datos_cli][0].'</td>
+                <td><strong>Fecha:</strong> ' . date("Y-m-d") . '</td>
             </tr>
             <tr>
-                <td><strong>Número de Factura:</strong> 001234</td>
-                <td></td>
+                <td><strong>Metodo de pago:</strong> '. $metodo_pago .'</td>
+                <td><strong>Hora:</strong> '.date("H:i:s A").'</td>
             </tr>
         </table>
         <table class="items">
@@ -81,48 +44,35 @@
                     <th>Producto</th>
                     <th>Cantidad</th>
                     <th>Precio</th>
+                    <th>Descuento</th>
                     <th>Total</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td>Producto A</td>
-                    <td>2</td>
-                    <td>$10.00</td>
-                    <td>$20.00</td>
-                </tr>
-                <tr>
-                    <td>Producto B</td>
-                    <td>1</td>
-                    <td>$15.00</td>
-                    <td>$15.00</td>
-                </tr>
-                <tr>
-                    <td>Producto C</td>
-                    <td>3</td>
-                    <td>$5.00</td>
-                    <td>$15.00</td>
-                </tr>
-            </tbody>
+            <tbody> '?>
+            <?php for( $i = 0; $i < count($array)-1; $i++ ){
+                echo'<tr>
+                    <td>'.$array[$i]['nombre'].'</td>
+                    <td>'.$array[$i]['cantidad'].'</td>
+                    <td>'.$array[$i]['precio'].'</td>
+                    <td>'.$array[$i]['descuento'].'</td>
+                    <td>'.$array[$i]['precio_final'].'</td>
+                </tr>';
+                $precio_total += $array[$i]['precio_final'];
+            }
+            echo '</tbody>
             <tfoot>
                 <tr>
-                    <td colspan="3" class="total">Subtotal:</td>
-                    <td class="total">$50.00</td>
-                </tr>
-                <tr>
-                    <td colspan="3" class="total">Descuento:</td>
-                    <td class="total">-$5.00</td>
-                </tr>
-                <tr>
-                    <td colspan="3" class="total">Total a Pagar:</td>
-                    <td class="total">$45.00</td>
+                    <td colspan="4" class="total">Total a Pagar:</td>
+                    <td class="total">$'.$precio_total.'</td>
                 </tr>
             </tfoot>
         </table>
         <div class="footer">
             <p>Gracias por su compra!</p>
-            <p>Contacto: info@ejemplo.com | Tel: 123-456-7890</p>
+            <p>Contacto: cocosSupermarket@gmail.com | Tel: 11 5435-9234</p>
         </div>
-    </div>
+    </div>'; }
+    
+    unset($_SESSION['dic_ticket'])?>
 </body>
 </html>

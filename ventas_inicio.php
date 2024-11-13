@@ -7,7 +7,7 @@
                 <div class="col-md-6">
                     <br>
                     <label for="dni" class="form-label">DNI</label>
-                    <input type="text" class="form-control" id="dni" required>
+                    <input type="number" class="form-control" id="dni" required>
                 </div>
                 <div class="col-md-6">
                     <br>

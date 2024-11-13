@@ -3,6 +3,7 @@ session_start();
 require_once('env.php');
 if(isset($_SESSION['id_empleado'])){
 if(isset($_POST['ticket'])){
+        $_SESSION['dic_ticket'] = $_POST['ticket'];
         $id_emp = intval($_SESSION['id_empleado']);
         $ticket = $_POST['ticket'];
         $suma = 0;
