@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $direccion = $_POST["Direccion"];
     $correo = strtolower($_POST["Correo"]);
     $numero =  $_POST["Numero"];
-    $puesto =  strtolower($_POST["Puesto"]);
+    $puesto =  $_POST["Puesto"];
 
     if (!empty($contra1) && !empty($contra2) && $contra1 != $contra2) {
         $error = "Las contraseñas no coinciden";
