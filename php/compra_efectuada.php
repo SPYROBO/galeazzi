@@ -3,7 +3,6 @@ session_start();
 require_once('env.php');
 if(isset($_SESSION['id_empleado'])){
 if(isset($_POST['ticket'])){
-    if(count('ticket') > 1){
         $id_emp = intval($_SESSION['id_empleado']);
         $ticket = $_POST['ticket'];
         $suma = 0;
@@ -14,12 +13,6 @@ if(isset($_POST['ticket'])){
         $sql = "INSERT INTO ventas (num_factura ,dni_cliente, id_empleado, fecha_venta, total, id_tipo_pago) VALUES (?,?,?,?,?,?) ";
         $result = $conn->prepare($sql);
         $result -> execute([1231,end($ticket)[0],$id_emp,date("Y-m-d"),$suma,end($ticket)[1]]);
-        for($i = 0; $i < count($ticket)-1; $i++){
-            $sql = "INSERT INTO detalle_venta (id_venta, id_producto, cant_producto) VALUES (?,?,?)";
-            $result = $conn->prepare($sql);
-            $result->execute()
-        }
-    }
 }
 }
 ?>             
