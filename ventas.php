@@ -15,11 +15,6 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'inicio';
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="?page=clientes">
-                            <i class="fas fa-users"></i> Clientes
-                        </a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link text-light" href="?page=ventas">
                             <i class="fas fa-chart-line"></i> Ventas
                         </a>
@@ -34,10 +29,6 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'inicio';
                 switch ($page){
                     case 'inicio':
                         require_once('../ventas_inicio.php');
-                        break;
-
-                    case 'clientes':
-                        require_once('info_clientes.php');
                         break;
                     case 'ventas':
                         require_once('ventas_info.php');
