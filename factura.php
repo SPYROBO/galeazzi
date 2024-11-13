@@ -26,7 +26,8 @@
         }
     echo '<div class="invoice">
         <div class="header">
-            <h1>Factura de Compra</h1>
+            <h1>Cocos Supermarket</h1>
+            <h3>Factura de Compra</h3>
         </div>
         <table class="details">
             <tr>
@@ -53,9 +54,9 @@
                 echo'<tr>
                     <td>'.$array[$i]['nombre'].'</td>
                     <td>'.$array[$i]['cantidad'].'</td>
-                    <td>'.$array[$i]['precio'].'</td>
-                    <td>'.$array[$i]['descuento'].'</td>
-                    <td>'.$array[$i]['precio_final'].'</td>
+                    <td> $'.$array[$i]['precio'].'</td>
+                    <td> %'.$array[$i]['descuento'].'</td>
+                    <td> $'.$array[$i]['precio_final'].'</td>
                 </tr>';
                 $precio_total += $array[$i]['precio_final'];
             }
@@ -73,6 +74,7 @@
         </div>
     </div>'; }
     
-    unset($_SESSION['dic_ticket'])?>
+    ?>
+    <?php unset($_SESSION['dic_ticket']); ?>
 </body>
 </html>
