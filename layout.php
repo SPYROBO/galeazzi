@@ -14,7 +14,6 @@
    <script src="../js/eliminar.js" > </script>
    <script src= "../js/traer_info.js"></script>
    <script src="../js/paginador.js"></script>
-   <script src="../js/buscador.js"></script>
    <link rel="stylesheet" href="../css/stock.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/tablas.css">

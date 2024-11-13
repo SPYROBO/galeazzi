@@ -40,7 +40,6 @@ $(document).ready(function () {
                     '<th>Descripción</th>' +
                     '<th>Precio</th>' +
                     '<th>Cantidad</th>' +
-                    '<th>codigo</th>' +
                     '</tr></thead><tbody>';
 
                 var elementosTot = productosFiltrados.length;
@@ -56,7 +55,6 @@ $(document).ready(function () {
                         <td> ${productosFiltrados[i].descripcion} </td>
                         <td> ${productosFiltrados[i].precio} </td>
                         <td> ${productosFiltrados[i].cant} </td>
-                        <td> ${productosFiltrados[i].id} </td>
                     </tr>`;
                 }
 

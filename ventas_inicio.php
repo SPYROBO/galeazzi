@@ -55,7 +55,7 @@
     <div class="col-md-6">
         <!-- Buscador -->
         <div class="mb-3">
-            <input type="text" id="searchInput" class="form-control" placeholder="Buscar codigo de producto" />
+            <input type="text" id="searchInput" class="form-control" placeholder="Buscar nombre del producto" />
         </div>
 
         <div id="productos"></div>
