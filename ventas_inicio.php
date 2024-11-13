@@ -7,7 +7,7 @@
                 <div class="col-md-6">
                     <br>
                     <label for="dni" class="form-label">DNI</label>
-                    <input type="text" class="form-control" id="dni" required>
+                    <input type="number" class="form-control" id="dni" required>
                 </div>
                 <div class="col-md-6">
                     <br>
@@ -107,6 +107,19 @@
                     <h5 class="card-title">Ingresos</h5>
                     <p> Cantidad : <span id="cant_ingresos">0</span> </p>
                 </div>
+        <center>
+            <br>
+            <h5 class="text-light">Buscar Artículos</h5>
+        </center>
+        <div class="col">
+            <div id="productos"></div>
+            <div class="pagination paginador" id="paginacion">
+                <nav aria-label='Page navigation example'>
+                    <ul class='pagination paginador_stock'>
+                        <a href="#" class="prev">Anterior</a>
+                        <a href="#" class="next">Siguiente</a>
+                    </ul>
+                </nav>
             </div>
         </div>
     </div>

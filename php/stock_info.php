@@ -39,7 +39,7 @@ if ($inicioProductos < 0) {
 $productosPaginados = array_slice($productos, $inicioProductos, CANT_REG_PAG);
 
 echo "<div>
-    <h1>Buscar Productos</h1>
+    <center><h3 style ='margin-top: 10px;'>Buscar Productos</h3></center>
     <form method='GET'>
     <br>
        <center> <input type='text' name='busqueda' placeholder='  ingrese producto,codigo o marca' value='' id='buscador'>

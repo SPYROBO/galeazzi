@@ -8,7 +8,7 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'home';
         <nav class="col-md-3 col-lg-2 d-md-block sidebarside">
             <div class="position-sticky">
                 <br>
-                <h4 class="text-light text-center mb-3">Menú de Gestión</h4>
+                <h4 class="text-light text-center mb-3 side_title">Menú de Gestión</h4>
                 <ul class="nav flex-column">
                     <li class="nav-item">
                         <a class="nav-link text-light" href="?page=home">
@@ -27,7 +27,7 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'home';
                     </li>
                 </ul>
             </div>
-            <button onclick="cerrarSesion()">Cerrar Sesión</button>
+            <button class="btn btn-secondary w-100" id="cerrar_sesion_stock" onclick="cerrarSesion()">Cerrar Sesión</button>
         </nav>
             <main class="col ms-sm-auto col-lg-10 px-4">
                <?php
