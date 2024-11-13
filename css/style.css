@@ -6,9 +6,6 @@ body {
     height: 100%;
 }
 
-h2, h5 {
-    margin-bottom: 20px;
-}
 
 .table {
     margin-top: 20px;
@@ -213,4 +210,15 @@ ul.nav.flex-column{
 
 .paginador {
     margin-top: 20px;
+}
+#titulo_menu {
+    text-align: center;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 10px;
+    margin-bottom: -0.5px;
 }
