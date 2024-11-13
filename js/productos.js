@@ -134,7 +134,6 @@ function compra_efectuada(){
     info_compro = document.getElementById("comprobante").value
     info.push(info_dni,info_pago,info_compro)
     ticket_completo.push(info)
-    console.log(ticket_completo)
     $.ajax({
         url: 'compra_efectuada.php',
         data: {'ticket':ticket_completo},
