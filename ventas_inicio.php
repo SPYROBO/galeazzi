@@ -50,24 +50,27 @@
             </div>
         </form>
     </div>
-    <!-- Buscador -->
+
+    <!-- Buscador y productos -->
     <div class="col-md-6">
-        <center>
-            <br>
-            <h5 class="text-light">Buscar Artículos</h5>
-        </center>
-        <div class="col">
-            <div id="productos"></div>
-            <div class="pagination paginador" id="paginacion">
-                <nav aria-label='Page navigation example'>
-                    <ul class='pagination paginador_stock'>
-                        <a href="#" class="prev">Anterior</a>
-                        <a href="#" class="next">Siguiente</a>
-                    </ul>
-                </nav>    
-            </div>
+        <!-- Buscador -->
+        <div class="mb-3">
+            <input type="text" id="searchInput" class="form-control" placeholder="Buscar codigo de producto" />
+        </div>
+
+        <div id="productos"></div>
+
+        <!-- Paginación -->
+        <div class="pagination paginador" id="paginacion">
+            <nav aria-label='Page navigation example'>
+                <ul class='pagination paginador_stock'>
+                    <a href="#" class="prev">Anterior</a>
+                    <a href="#" class="next">Siguiente</a>
+                </ul>
+            </nav>    
         </div>
     </div>
+
     <!-- Tarjetas de información -->
     <div class="row mt-4">
         <div class="col">

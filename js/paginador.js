@@ -1,4 +1,9 @@
-prueba = ''
+var prueba = [];
+var pagActual = 1;
+var mostrarRegistros = 5;
+var numeroTotPag = 0;
+var offset = 0;
+
 $(document).ready(function () {
     $.ajax({
         url: 'traer_info.php',
@@ -6,13 +11,27 @@ $(document).ready(function () {
         type: 'POST',
         dataType: 'json',
         success: function (data) {
+            prueba = data;
             var elementosTot = data.length;
-            var mostrarRegistros = 5;
-            var numeroTotPag = Math.ceil(elementosTot / mostrarRegistros);
-            var pagActual = 1;
-            var offset = (pagActual - 1) * mostrarRegistros;
-            $('#cant_productos').html(elementosTot);
+            
+            function actualizarNumeroTotPag() {
+                var productosFiltrados = filtrarProductos($('#searchInput').val());
+                numeroTotPag = Math.ceil(productosFiltrados.length / mostrarRegistros);
+                $('#cant_productos').html(productosFiltrados.length); 
+            }
+
+            function filtrarProductos(searchTerm) {
+                if (!searchTerm) {
+                    return prueba;
+                }
+                return prueba.filter(function (producto) {
+                    return producto.nombre.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                        producto.descripcion.toLowerCase().includes(searchTerm.toLowerCase());
+                });
+            }
+            
             function mostrarRegistrosPagina() {
+                var productosFiltrados = filtrarProductos($('#searchInput').val()); 
                 var registrosHTML = '<table class="table table-bordered"><thead><tr>' +
                     '<th>Agregar</th>' +
                     '<th>Producto</th>' +
@@ -21,27 +40,36 @@ $(document).ready(function () {
                     '<th>Descripción</th>' +
                     '<th>Precio</th>' +
                     '<th>Cantidad</th>' +
+                    '<th>codigo</th>' +
                     '</tr></thead><tbody>';
-                    prueba = data
 
+                var elementosTot = productosFiltrados.length;
+             
+                actualizarNumeroTotPag();
+                
                 for (var i = offset; i < offset + mostrarRegistros && i < elementosTot; i++) {
                     registrosHTML += `<tr>
-                        <td><button id="añadir${data[i].id}" onclick="crearTicket(${data[i].id},'${data[i].nombre}',${data[i].precio},${data[i].descuento},${data[i].cant})"> + </button></td>
-                        <td> ${data[i].nombre} </td> 
-                        <td> ${data[i].marca} </td>
-                        <td> ${data[i].descuento} </td>
-                        <td> ${data[i].descripcion} </td>
-                        <td> ${data[i].precio} </td>
-                        <td> ${data[i].cant} </td>
-                        </tr>`;
+                        <td><button id="añadir${productosFiltrados[i].id}" onclick="crearTicket(${productosFiltrados[i].id},'${productosFiltrados[i].nombre}',${productosFiltrados[i].precio},${productosFiltrados[i].descuento},${productosFiltrados[i].cant})"> + </button></td>
+                        <td> ${productosFiltrados[i].nombre} </td>
+                        <td> ${productosFiltrados[i].marca} </td>
+                        <td> ${productosFiltrados[i].descuento} </td>
+                        <td> ${productosFiltrados[i].descripcion} </td>
+                        <td> ${productosFiltrados[i].precio} </td>
+                        <td> ${productosFiltrados[i].cant} </td>
+                        <td> ${productosFiltrados[i].id} </td>
+                    </tr>`;
                 }
 
                 registrosHTML += '</tbody></table>';
                 $('#productos').html(registrosHTML);
             }
-
+            
             function generarPaginacion() {
                 var paginacionHTML = '';
+                var productosFiltrados = filtrarProductos($('#searchInput').val()); 
+                var elementosTot = productosFiltrados.length;
+
+                numeroTotPag = Math.ceil(elementosTot / mostrarRegistros);
 
                 if (pagActual > 1) {
                     paginacionHTML += '<a href="#" class="prev" data-page="' + (pagActual - 1) + '">Anterior</a>';
@@ -64,6 +92,13 @@ $(document).ready(function () {
 
             mostrarRegistrosPagina();
             generarPaginacion();
+
+            $('#searchInput').on('keyup', function () {
+                offset = 0; 
+                pagActual = 1;
+                mostrarRegistrosPagina();
+                generarPaginacion();
+            });
 
             $(document).on('click', '.page, .prev, .next', function (e) {
                 e.preventDefault();
