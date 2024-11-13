@@ -25,8 +25,8 @@ $(document).ready(function () {
                     prueba = data
 
                 for (var i = offset; i < offset + mostrarRegistros && i < elementosTot; i++) {
-                    registrosHTML += `<tr>
-                        <td><button id="añadir${data[i].id}" onclick="crearTicket(${data[i].id},'${data[i].nombre}',${data[i].precio},${data[i].descuento},${data[i].cant})"> + </button></td>
+                    registrosHTML += `<tr style= "text-align:center;">
+                        <td><button class="btn btn-success w-90" id="añadir${data[i].id}" onclick="crearTicket(${data[i].id},'${data[i].nombre}',${data[i].precio},${data[i].descuento},${data[i].cant})"> + </button></td>
                         <td> ${data[i].nombre} </td> 
                         <td> ${data[i].marca} </td>
                         <td> ${data[i].descuento} </td>

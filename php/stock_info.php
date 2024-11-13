@@ -49,7 +49,7 @@ echo "<div>
 <br>
     <table class='table table-hover table-bordered'>
     <thead class='thead-dark'>
-        <tr>
+        <tr style= 'text-align:center;'>
             <th>Eliminar</th>
             <th>Artículo</th>
             <th>Marca</th>
@@ -62,7 +62,7 @@ echo "<div>
     <tbody>";
 
 foreach ($productosPaginados as $producto) { 
-    echo "<tr>
+    echo "<tr style= 'text-align:center;'>
         <td>
             <center><button id='{$producto['id']}' class='btn btn-danger btn-sm' onclick='eliminarProducto({$producto['id']})'>-</button></center>
         </td>

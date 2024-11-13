@@ -24,7 +24,7 @@ $productosPaginados = array_slice($productos, $inicioProductos, CANT_REG_PAG);
 
 echo '<table class="tabla-proveedores">
 <thead>
-    <tr>
+    <tr style= "text-align:center;">
         <th>Agregar</th>
         <th>Nombre</th>
         <th>Marca</th>
@@ -37,7 +37,7 @@ echo '<table class="tabla-proveedores">
 <tbody>';
 
 foreach ($productosPaginados as $productos) { 
-    echo "<tr>
+    echo "<tr style= 'text-align:center;'>
     <td>
         <center> <button id=\"{$productos['id']}\" class=\"btn btn-success btn-sm\"onclick=\"cambiarCant({$productos['id']},{$productos['cant']}, '" . addslashes($productos['nombre']) . "')\">+</button></center>
     </td>

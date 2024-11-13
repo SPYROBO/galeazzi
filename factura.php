@@ -51,7 +51,7 @@
             </thead>
             <tbody> '?>
             <?php for( $i = 0; $i < count($array)-1; $i++ ){
-                echo'<tr>
+                echo'<tr style = "text-align : center;">
                     <td>'.$array[$i]['nombre'].'</td>
                     <td>'.$array[$i]['cantidad'].'</td>
                     <td> $'.$array[$i]['precio'].'</td>
@@ -64,7 +64,7 @@
             <tfoot>
                 <tr>
                     <td colspan="4" class="total">Total a Pagar:</td>
-                    <td class="total">$'.$precio_total.'</td>
+                    <td style = "text-align : center;" class="total">$'.$precio_total.'</td>
                 </tr>
             </tfoot>
         </table>

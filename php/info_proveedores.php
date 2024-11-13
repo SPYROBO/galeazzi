@@ -22,7 +22,7 @@ $proveedoresPaginados = array_slice($proveedores, $inicioProveedores, CANT_REG_P
 
 echo '<table class="tabla-proveedores">
 <thead>
-    <tr>
+    <tr style= "text-align:center;">
         <th>Eliminar</th>
         <th>Nombre</th>
         <th>Dirección</th>
@@ -36,7 +36,7 @@ echo '<table class="tabla-proveedores">
 <tbody>';
 
 foreach ($proveedoresPaginados as $proveedor) { 
-    echo "<tr>
+    echo "<tr style= 'text-align:center;'>
         <td>
             <center><button id='{$proveedor['id']}' class='btn btn-danger btn-sm' onclick='eliminarProveedor({$proveedor['id']}, {$proveedor['id_prod']})'>-</button></center>
         </td>
