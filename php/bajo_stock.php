@@ -6,13 +6,13 @@ $consul = "SELECT p.*, m.nombre AS 'marca', d.nombre AS 'descuento', s.cantidad 
     INNER JOIN marcas AS m ON m.id = p.id_marca
     INNER JOIN descuentos AS d ON d.id = p.id_descuento
     INNER JOIN stock AS s ON s.id_producto = p.id 
-	WHERE s.cantidad <= 30";
+	WHERE s.cantidad <= 50";
 
 $res = $conn->query($consul);
 $productos = $res->fetchAll(PDO::FETCH_ASSOC);
 
 $pagProductos = isset($_GET['pagStock']) ? (int)$_GET['pagStock'] : 1;
-define('CANT_REG_PAG', 2);
+define('CANT_REG_PAG', 3);
 $cantPagProductos = ceil(count($productos) / CANT_REG_PAG);
 $inicioProductos = ($pagProductos - 1) * CANT_REG_PAG;
 

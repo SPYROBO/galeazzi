@@ -146,6 +146,10 @@ function compra_efectuada(){
     window.location.href = 'ventas_direccion.php'; 
 }
 
+function compra_cancelada(){
+    window.location.href = 'ventas_direccion.php'; 
+}
+
 function cambiarCant(id ,cantidad, producto) {
     let valor = prompt("Por favor, ponga la cantidad ingresante del producto: " + producto );
 

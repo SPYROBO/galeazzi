@@ -55,7 +55,7 @@
                     <td>'.$array[$i]['nombre'].'</td>
                     <td>'.$array[$i]['cantidad'].'</td>
                     <td> $'.$array[$i]['precio'].'</td>
-                    <td> %'.$array[$i]['descuento'].'</td>
+                    <td> '.$array[$i]['descuento'].'%</td>
                     <td> $'.$array[$i]['precio_final'].'</td>
                 </tr>';
                 $precio_total += $array[$i]['precio_final'];
